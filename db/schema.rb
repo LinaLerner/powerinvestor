@@ -10,15 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_03_142313) do
+ActiveRecord::Schema.define(version: 2019_06_03_162540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "company_types", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "project_categories", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "project_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_project_categories_on_category_id"
+    t.index ["project_id"], name: "index_project_categories_on_project_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -33,11 +54,38 @@ ActiveRecord::Schema.define(version: 2019_06_03_142313) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.string "project_url"
+    t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "locations_id"
+    t.bigint "company_type_id"
+    t.index ["company_type_id"], name: "index_projects_on_company_type_id"
+    t.index ["locations_id"], name: "index_projects_on_locations_id"
   end
 
-  create_table "table_projects", force: :cascade do |t|
+  create_table "user_categories", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_user_categories_on_user_id"
+  end
+
+  create_table "user_company_types", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "company_type_id"
+    t.bigint "user_id"
+    t.index ["company_type_id"], name: "index_user_company_types_on_company_type_id"
+    t.index ["user_id"], name: "index_user_company_types_on_user_id"
+  end
+
+  create_table "user_locations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "location_id"
+    t.bigint "user_id"
+    t.index ["location_id"], name: "index_user_locations_on_location_id"
+    t.index ["user_id"], name: "index_user_locations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -55,4 +103,13 @@ ActiveRecord::Schema.define(version: 2019_06_03_142313) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "project_categories", "categories"
+  add_foreign_key "project_categories", "projects"
+  add_foreign_key "projects", "company_types"
+  add_foreign_key "projects", "locations", column: "locations_id"
+  add_foreign_key "user_categories", "users"
+  add_foreign_key "user_company_types", "company_types"
+  add_foreign_key "user_company_types", "users"
+  add_foreign_key "user_locations", "locations"
+  add_foreign_key "user_locations", "users"
 end

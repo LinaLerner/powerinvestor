@@ -1,0 +1,2 @@
+class UserCompanyType < ApplicationRecord
+end
