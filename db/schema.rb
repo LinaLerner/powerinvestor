@@ -119,7 +119,7 @@ ActiveRecord::Schema.define(version: 2019_06_04_104645) do
   add_foreign_key "project_categories", "categories"
   add_foreign_key "project_categories", "projects"
   add_foreign_key "projects", "company_types"
-  add_foreign_key "projects", "locations", column: "locations_id"
+  add_foreign_key "projects", "locations"
   add_foreign_key "user_categories", "categories"
   add_foreign_key "user_categories", "users"
   add_foreign_key "user_company_types", "company_types"
