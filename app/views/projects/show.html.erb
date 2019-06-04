@@ -1,6 +1,6 @@
 <ul>
     <li>title : <%= @project.title %></li>
-    <li>description : <%= @project.description %></li>
+    <li>description : <%= @project.long_description %></li>
     <li>rating : <%= @project.rating %></li>
     <li>
       progress : <%= (@project.amount_collected.to_f / @project.amount_needed * 100 ).round %> %
