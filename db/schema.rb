@@ -57,10 +57,10 @@ ActiveRecord::Schema.define(version: 2019_06_03_162540) do
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "locations_id"
+    t.bigint "location_id"
     t.bigint "company_type_id"
     t.index ["company_type_id"], name: "index_projects_on_company_type_id"
-    t.index ["locations_id"], name: "index_projects_on_locations_id"
+    t.index ["location_id"], name: "index_projects_on_location_id"
   end
 
   create_table "user_categories", force: :cascade do |t|
@@ -106,7 +106,7 @@ ActiveRecord::Schema.define(version: 2019_06_03_162540) do
   add_foreign_key "project_categories", "categories"
   add_foreign_key "project_categories", "projects"
   add_foreign_key "projects", "company_types"
-  add_foreign_key "projects", "locations", column: "locations_id"
+  add_foreign_key "projects", "locations"
   add_foreign_key "user_categories", "users"
   add_foreign_key "user_company_types", "company_types"
   add_foreign_key "user_company_types", "users"
