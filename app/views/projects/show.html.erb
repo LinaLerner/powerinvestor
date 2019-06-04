@@ -17,3 +17,4 @@
     <li>project_url : <%= @project.project_url %></li>
 </ul>
 <%=  link_to "go back", projects_path%>
+<%=  link_to "add to favorites", project_favorites_path(@project), method: :post%>
