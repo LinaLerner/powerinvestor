@@ -1,0 +1,20 @@
+<ul>
+    <li>title : <%= @project.title %></li>
+    <li>description : <%= @project.description %></li>
+    <li>rating : <%= @project.rating %></li>
+    <li>
+      progress : <%= (@project.amount_collected.to_f / @project.amount_needed * 100 ).round %> %
+
+    </li>
+    <li>amount_needed : <%= @project.amount_needed %></li>
+    <li>amount_collected : <%= @project.amount_collected %></li>
+    <li>minimum_investment : <%= @project.minimum_investment %></li>
+    <li>exit_timing : <%= @project.exit_timing %></li>
+    <li>financial_product : <%= @project.financial_product %></li>
+    <li>project_manager_profile : <%= @project.project_manager_profile %></li>
+    <li>start_date : <%= @project.start_date %></li>
+    <li>end_date : <%= @project.end_date %></li>
+    <li>project_url : <%= @project.project_url %></li>
+</ul>
+<%=  link_to "go back", projects_path%>
+<%=  link_to "add to favorites", project_favorites_path(@project), method: :post%>

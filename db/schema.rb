@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 2019_06_04_104645) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "project_id"
+    t.bigint "user_id"
+    t.index ["project_id"], name: "index_favorites_on_project_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
   create_table "locations", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -57,10 +66,10 @@ ActiveRecord::Schema.define(version: 2019_06_04_104645) do
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "locations_id"
+    t.bigint "location_id"
     t.bigint "company_type_id"
     t.index ["company_type_id"], name: "index_projects_on_company_type_id"
-    t.index ["locations_id"], name: "index_projects_on_locations_id"
+    t.index ["location_id"], name: "index_projects_on_location_id"
   end
 
   create_table "user_categories", force: :cascade do |t|
@@ -105,6 +114,8 @@ ActiveRecord::Schema.define(version: 2019_06_04_104645) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "favorites", "projects"
+  add_foreign_key "favorites", "users"
   add_foreign_key "project_categories", "categories"
   add_foreign_key "project_categories", "projects"
   add_foreign_key "projects", "company_types"
