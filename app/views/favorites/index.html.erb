@@ -1,26 +1,31 @@
 <div class="container">
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item active" aria-current="page">My favorites</li>
-    <li class="breadcrumb-item"><%= link_to 'My catalog'  %></li>
-    <li class="breadcrumb-item"><%= link_to 'My rents' %></li>
-  </ol>
-</nav>
 <% unless @favorites.count == 0 %>
 
   <table class="table table-striped bg-white">
     <thead>
       <tr>
         <th class ="text-center px-10" scope="col">My projects</th>
+        <th class ="text-center px-10" scope="col">Categories</th>
+        <th class ="text-center px-10" scope="col">Progress</th>
+        <th class ="text-center px-10" scope="col">Minimum investment</th>
       </tr>
     </thead>
     <% @favorites.each do |favorite|%>
     <tbody>
       <tr>
         <td class ="text-center align-middle bg-white">
-          <%= link_to "#{favorite.project.title}", project_path(favorite.project) %>
-
-          <%=  %>
+          <%= link_to "#{favorite.project.title}", favorite.project.project_url %>
+        </td>
+        <td class ="text-center align-middle bg-white">
+          <% favorite.project.categories.to_a.each do |category| %>
+           <%= "#{category.title}" %>
+          <% end %>
+        </td>
+        <td class ="text-center align-middle bg-white">
+          <%= (favorite.project.amount_collected.to_f / favorite.project.amount_needed * 100 ).round %> %
+        </td>
+        <td class ="text-center align-middle bg-white">
+          <%= favorite.project.minimum_investment %> €
         </td>
       </tr>
     </tbody>
