@@ -7,14 +7,21 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+        <link rel="shortcut icon" type="image/png" href="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559682806/fav_xbwrxl.ico"/>
+
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <% unless controller_name == "pages" || controller_name == "sessions" || controller_name == "registrations" %>
-    <%= render "layouts/navbar" %>
-    <% end %>
-    <%= yield %>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
+    <div id="page-container">
+     <div id="content-wrap">
+        <% unless controller_name == "pages" || controller_name == "sessions" || controller_name == "registrations" %>
+        <%= render "layouts/navbar" %>
+        <% end %>
+        <%= yield %>
+        <%= javascript_include_tag 'application' %>
+        <%= javascript_pack_tag 'application' %>
+</div>
+      </div>
+     <%= render "layouts/footer" %>
   </body>
 </html>

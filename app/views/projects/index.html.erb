@@ -1,3 +1,35 @@
+
+<div class="container">
+  <div class="header-top-project"><h1> 3 projets sélectionnés pour vous<h1>
+    <p>Votre profil nous invite à vous recommander ces projets.</p>
+  </div>
+    <div class="cards-grid">
+        <div class="cards">
+
+            <div class="cards-top">
+              <div class="cards-tag">Category
+              </div>
+               <div><img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559664386/Remove-card-icon_fqvuj1.png" alt="Remove project" class="cards-picto-exit">
+              </div>
+            </div>
+
+            <div class="cards-header"><h2>Card header</h2>
+
+            </div>
+            <div class="cards-middle"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.  /// project.rating //
+              <input type="button" class="cards-button" value="Ajouter au comparateur">
+
+            </div>
+            <div class="cards-footer">
+              <div class="cards-picto-box">
+                <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559665618/battery-low_hdtxf5.png" alt="progression" class="cards-picto-status"> 30%
+                <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559665618/euro_hd0zqv.png" alt="amount" class="cards-picto-amount"> 150€ min
+                <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559665619/rate_wbupkd.png" alt="rate" class="cards-picto-rate"> 3/5
+              </div>
+            </div>
+          </div>
+</div>
+
 <ul>
   <% @projects.each do |project| %>
     <li>title : <%= project.title %></li>
@@ -11,4 +43,75 @@
     <li><%= link_to "show", project_path(project)  %></li>
   <% end %>
 </ul>
+
+         <div class="header-other-project"> <h1>250 autres projets sont disponibles<h1>
+    <p>Notre équipe sélectionne chaque jour de nouveaux projets pour donner du sens à vos placements</p>
+    <div class="card-filter">
+<ul class="nav nav-pills">
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </li> <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </li>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </li>
+
+</ul></div>
+  </div>
+<div class="cards-grid">
+      <div class="cards">
+
+          <div class="cards-top">
+            <div class="cards-tag">Category
+            </div>
+             <div><img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559664386/Remove-card-icon_fqvuj1.png" alt="Remove project" class="cards-picto-exit">
+            </div>
+          </div>
+
+          <div class="cards-header"><h2>Card header</h2>
+
+          </div>
+          <div class="cards-middle"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.  /// project.rating //
+            <input type="button" class="cards-button" value="Ajouter au comparateur">
+
+          </div>
+          <div class="cards-footer">
+            <div class="cards-picto-box">
+              <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559665618/battery-low_hdtxf5.png" alt="progression" class="cards-picto-status"> 30%
+              <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559665618/euro_hd0zqv.png" alt="amount" class="cards-picto-amount"> 150€ min
+              <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559665619/rate_wbupkd.png" alt="rate" class="cards-picto-rate"> 3/5
+            </div>
+          </div>
+        </div>
+
+</div>
+
+
+
+
+
+
+
 
