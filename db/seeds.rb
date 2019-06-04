@@ -102,7 +102,7 @@ bioburger = Project.create(
   amount_collected: 3500,
   minimum_investment: 258,
   exit_timing: 2,
-  company_type: start-up,
+  company_type: start_up,
   location: europe,
   city: "Paris",
   project_manager_profile: "Camarades de classe, c’est sur les bancs de l’école que Louis Frack et Anthony Darré ont pour la première fois l’idée de créer Bioburger, l’offre de street food et particulièrement de burgers, une offre alors très limitée. À la fin de leurs études, la décision est prise : ils rénovent du sol au plafond un ancien restaurant asiatique et ouvrent en juillet 2011 leur premier point de vente. Ce sera passage de Choiseul en plein cœur de Paris. Ils sont sur tous les fronts et travaillent sans relâche sur les process en restaurant, la logistique, et la rentabilité de chaque restaurant afin de les rendre autonomes. Pari réussi ! Aujourd’hui, Louis Frack est en charge du développement de l’enseigne et des problématiques administratives, financières et juridiques. Anthony Darré, quant à lui, assure la supervision opérationnelle de l’entreprise, du développement produits et des achats.",
