@@ -1,8 +1,12 @@
 <div class="container">
-  <div class="row justify-content-center ">
-    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <div class="row d-flex justify-content-between ">
+    <div class="img-form">
+      <%= image_tag "Rocket.png" %>
+    </div>
+    <div class="edit-form">
+      <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
 
         <%= f.association :categories, as: :check_boxes %>
@@ -10,13 +14,11 @@
         <%= f.association :company_types, as: :check_boxes %>
         <%= f.input :maximum_investment, as: :range, min:1, max:10, :input_html => { :class => 'slider' } %>
         <p>Value: <span id="demo"></span></p>
-
-      </div>
       <div class="form-actions">
         <%= f.button :submit, "Update" %>
       </div>
-    <% end %>
-
+      <% end %>
+    </div>
   </div>
 </div>
 
