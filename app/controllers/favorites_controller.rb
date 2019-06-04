@@ -9,5 +9,6 @@ class FavoritesController < ApplicationController
     @project = Project.find(params[:project_id])
     @favorite.project = @project
     @favorite.user = current_user
+    @favorite.save
   end
 end
