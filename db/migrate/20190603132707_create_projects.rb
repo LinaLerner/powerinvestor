@@ -11,7 +11,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.string :exit_timing
       t.string :city
       t.string :financial_product
-      t.integer :project_manager_profile
+      t.text :project_manager_profile
       t.datetime :start_date
       t.datetime :end_date
       t.string :project_url
