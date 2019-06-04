@@ -2,26 +2,13 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
 # CLEAN ERRRRYTHING
-
 ProjectCategory.destroy_all
+Project.destroy_all
 Category.destroy_all
 Location.destroy_all
 CompanyType.destroy_all
-Project.destroy_all
 
 # CompanyType
-
-action = CompanyType.new(title: "action")
-action.save
-
-obligation = CompanyType.new(title: "obligation")
-obligation.save
-
-part_social = CompanyType.new(title: "part social")
-part_social.save
-
-microcredit = CompanyType.new(title: "microcrédit")
-microcredit.save
 
 socinvest = CompanyType.new(title: "société d'investissement")
 socinvest.save
@@ -32,6 +19,8 @@ ong.save
 start_up = CompanyType.new(title: "start up")
 start_up.save
 
+particulier = CompanyType.new(title: "particulier")
+particulier.save
 
 # CATEGORY
 
@@ -88,8 +77,8 @@ Support associations fighting daily against poor housing to provide practical an
   amount_collected: 2300,
   minimum_investment: 230,
   exit_timing: 2,
-  company_type_id: 2,
-  location_id: 2,
+  company_type: ong,
+  location: amlat,
   project_manager_profile: "solifap",
   start_date: DateTime.parse("08/06/2019 19:00"),
   end_date: DateTime.parse("02/06/2019 19:00"),
@@ -105,8 +94,8 @@ bioburger = Project.create(
   amount_collected: 3500,
   minimum_investment: 200,
   exit_timing: 2,
-  company_type_id: 1,
-  location_id: 3,
+  company_type: socinvest,
+  location: mo,
   project_manager_profile: "bioburger",
   start_date: DateTime.parse("08/06/2019 19:00"),
   end_date: DateTime.parse("02/06/2019 19:00"),
@@ -122,8 +111,8 @@ ecomegot = Project.create(
   amount_collected: 2500,
   minimum_investment: 50,
   exit_timing: 2,
-  company_type_id: 3,
-  location_id: 1,
+  company_type: start_up,
+  location: europe,
   project_manager_profile: "ecomegot",
   start_date: DateTime.parse("08/06/2019 19:00"),
   end_date: DateTime.parse("02/06/2019 19:00"),
@@ -139,8 +128,8 @@ solarbrother = Project.create(
   amount_collected: 2500,
   minimum_investment: 50,
   exit_timing: 2,
-  company_type_id: 2,
-  location_id: 2,
+  company_type: ong,
+  location: amlat,
   project_manager_profile: "solar brother",
   start_date: DateTime.parse("08/06/2019 19:00"),
   end_date: DateTime.parse("02/06/2019 19:00"),
@@ -155,9 +144,9 @@ wheeliz = Project.create(
   amount_needed: 17000,
   amount_collected: 2500,
   minimum_investment: 50,
-  exit_timing: 2,
-  company_type_id: 1,
-  location_id: 4,
+  exit_timing: ong,
+  company_type: socinvest,
+  location: afrique,
   project_manager_profile: "wheeliz",
   start_date: DateTime.parse("08/06/2019 19:00"),
   end_date: DateTime.parse("02/06/2019 19:00"),
@@ -165,5 +154,7 @@ wheeliz = Project.create(
   rating: 1
   )
 ProjectCategory.create(project_id: wheeliz.id, category_id:egalite.id)
+
+
 
 

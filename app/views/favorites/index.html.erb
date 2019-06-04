@@ -1,0 +1,34 @@
+<div class="container">
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">My favorites</li>
+    <li class="breadcrumb-item"><%= link_to 'My catalog'  %></li>
+    <li class="breadcrumb-item"><%= link_to 'My rents' %></li>
+  </ol>
+</nav>
+<% unless @favorites.count == 0 %>
+
+  <table class="table table-striped bg-white">
+    <thead>
+      <tr>
+        <th class ="text-center px-10" scope="col">My projects</th>
+      </tr>
+    </thead>
+    <% @favorites.each do |favorite|%>
+    <tbody>
+      <tr>
+        <td class ="text-center align-middle bg-white">
+          <%= link_to "#{favorite.project.title}", project_path(favorite.project) %>
+
+          <%=  %>
+        </td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+
+<% else %>
+  <p> You have never booked a pair of socks ?!</p>
+    <%= link_to 'Let\'s go'  %>
+<% end %>
+</div>
