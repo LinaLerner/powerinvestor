@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row d-flex justify-content-between ">
+    <div class="img-form">
+      <%= image_tag "Rocket.png" %>
+    </div>
+    <div class="edit-form">
+      <h2>VOus êtes plutôt quel type de porteur de projet?</h2>
+
+      <%= simple_form_for([@user], :url => registration_path(@user), :method => :patch) do |f| %>
+        <%= f.error_notification %>
+        <%= f.association :company_types, as: :check_boxes %>
+        <h2>Dites nous combien</h2>
+        <%= f.input :maximum_investment, as: :range, min:1, max:10, :input_html => { :class => 'slider' } %>
+        <p>Investissement max: <span id="demo"></span></p>
+        <div class="form-actions">
+        <%= f.input :step, as: :hidden, :input_html => { :value => 'step3' } %>
+        <%= f.button :submit, "Impressionnez moi!" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
