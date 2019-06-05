@@ -1,0 +1,39 @@
+<div class="container">
+<% unless @favorites.count == 0 %>
+
+  <table class="table table-striped bg-white">
+    <thead>
+      <tr>
+        <th class ="text-center px-10" scope="col">My projects</th>
+        <th class ="text-center px-10" scope="col">Categories</th>
+        <th class ="text-center px-10" scope="col">Progress</th>
+        <th class ="text-center px-10" scope="col">Minimum investment</th>
+      </tr>
+    </thead>
+    <% @favorites.each do |favorite|%>
+    <tbody>
+      <tr>
+        <td class ="text-center align-middle bg-white">
+          <%= link_to "#{favorite.project.title}", favorite.project.project_url %>
+        </td>
+        <td class ="text-center align-middle bg-white">
+          <% favorite.project.categories.to_a.each do |category| %>
+           <%= "#{category.title}" %>
+          <% end %>
+        </td>
+        <td class ="text-center align-middle bg-white">
+          <%= (favorite.project.amount_collected.to_f / favorite.project.amount_needed * 100 ).round %> %
+        </td>
+        <td class ="text-center align-middle bg-white">
+          <%= favorite.project.minimum_investment %> €
+        </td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+
+<% else %>
+  <p> You have never booked a pair of socks ?!</p>
+    <%= link_to 'Let\'s go'  %>
+<% end %>
+</div>
