@@ -1,3 +1,14 @@
+<div class="franceconnect-modal d-none">
+
+  <div class="modal-content">
+    <h2>Votre profil n'est pas complet !</h2>
+    <p>Nous avons besoin de certains documents pour pouvoir valider votre investissement. Compléter votre profil en un clic !</p>
+    <div>
+      <input type="button" class="franceconnect-button" value="Complétez le en un clic.">
+    </div>
+  </div>
+</div>
+
 <div class="container">
 
   <div class="d-flex flex-column">
@@ -69,10 +80,10 @@
         </div>
       </div>
 
-      <%= form_tag orders_path do %>
+      <%= form_tag orders_path, remote: true do %>
       <%= hidden_field_tag 'project_id', @project.id %>
       <%= number_field_tag 'amount_cents'%>
-      <%= submit_tag 'Investir', class: 'button' %>
+      <%= submit_tag 'Investir', class: 'invest-btn' %>
       <% end %>
 
     </div>
@@ -90,5 +101,4 @@
   <div class="link">
    <%=  link_to "< Go back", projects_path%>
   </div>
-
 </div>
