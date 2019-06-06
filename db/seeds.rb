@@ -27,28 +27,28 @@ entreprise_mature.save
 
 # CATEGORY
 
-agriculture = Category.new(title: "agriculture")
+agriculture = Category.new(title: "agriculture", image: "agriculture.png")
 agriculture.save
 
-alimentation = Category.new(title: "alimentation")
+alimentation = Category.new(title: "alimentation", image: "alimentation.png")
 alimentation.save
 
-energie = Category.new(title: "énergie")
+energie = Category.new(title: "énergie", image: "energie.png")
 energie.save
 
-pauvrete = Category.new(title: "pauvreté")
+pauvrete = Category.new(title: "pauvreté", image: "pauvrete.png")
 pauvrete.save
 
-sante = Category.new(title: "santé")
+sante = Category.new(title: "santé", image: "sante.png")
 sante.save
 
-egalite = Category.new(title: "égalité")
+egalite = Category.new(title: "égalité", image: "egalite.png")
 egalite.save
 
-environnement = Category.new(title: "environnement")
+environnement = Category.new(title: "environnement", image: "environnement.png")
 environnement.save
 
-education = Category.new(title: "éducation")
+education = Category.new(title: "éducation", image: "education.png")
 education.save
 
 
