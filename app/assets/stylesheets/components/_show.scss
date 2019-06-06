@@ -10,20 +10,11 @@
   text-align: right;
 }
 
-.button a {
-  width: 170px;
-  height: 33px;
-  border-radius: 4px;
-  background-color: #202135;
-  align-items: center;
-  color: white;
-  font-size: 14px;
-  margin:100px;
-  text-decoration: none;
-}
-
 .project-financial-info-card {
-  position: sticky;
   width: 100%;
   background-color: antiquewhite;
+}
+
+.stripe-payment {
+  display: none;
 }

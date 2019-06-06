@@ -18,8 +18,10 @@ before_action :set_order
     )
 
     @order.update(payment: charge.to_json, state: 'paid')
-    # redirect_to orders_path(@order)
+
+    # redirect_to order_path(@order)
     redirect_to orders_path(@order)
+
   rescue Stripe::CardError => e
     flash[:alert] = e.message
     redirect_to new_order_payment_path(@order)
