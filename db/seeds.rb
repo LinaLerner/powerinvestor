@@ -13,8 +13,6 @@ CompanyType.destroy_all
 socinvest = CompanyType.new(title: "société d'investissement")
 socinvest.save
 
-ong = CompanyType.new(title: "ong")
-ong.save
 
 start_up = CompanyType.new(title: "start up")
 start_up.save
@@ -81,7 +79,7 @@ solifap = Project.create(
   amount_collected: 2300,
   minimum_investment: 500,
   exit_timing: 4,
-  company_type: ong,
+  company_type: start_up,
   location: amlat,
   city: "Paris",
   project_manager_profile: "François Chaillou est Président de Solifap depuis sa création et était auparavant Vice-Président de la Fondation Abbé Pierre. Ingénieur urbaniste de formation, il a été directeur de Soliha Centre Val de Loire, structure solidaire d’amélioration de l’habitat, et gérant de Ficosil, société immobilière ayant pour but de loger des personnes en situation d’exclusion sociale. Son parcours ainsi que son implication, autant auprès de la Fondation Abbé Pierre que de Solifap, lui apporte une réelle expertise ainsi qu’un rôle de connecteur entre les deux structures. À ses côtés Charles Le Gac, est le Directeur Général de Solifap. Issu d’une formation juridique, il a occupé divers postes de dirigeant d’associations dans les domaines de l’éducation populaire, de la solidarité internationale et de la lutte contre l’exclusion. Dernièrement Directeur de la délégation de Paris du Secours Catholique, il a contribué à la création de l’agence immobilière à vocation sociale de l’association. Charles a acquis une solide expérience de management et gestion de projets, d’analyse de projets à impacts et de développement de réseaux de partenariat en France comme à l’international.",

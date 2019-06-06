@@ -1,0 +1,18 @@
+.btn-form {
+  width: 200px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #202135;
+  align-items: center;
+  color: #DCE3FD;
+  font-size: 14px;
+  margin:25px;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+    background-color: #DCE3FD;
+    transition: background-color 0.3s;
+    color: #202135;
+    box-shadow: 2px 3px 8px #202135;
+  }
+}
