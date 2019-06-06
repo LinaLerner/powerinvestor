@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row d-flex justify-content-between ">
-    <div class="img-form">
+    <div class="img-form d-flex">
+      <h2 class="m-3 mb-5">Hello <%= @user.first_name %></h2>
       <%= image_tag "Rocket.png" %>
     </div>
     <div class="edit-form">
@@ -8,10 +9,29 @@
       <%= simple_form_for([@user], :url => registration_path(@user), :method => :patch) do |f| %>
       <%= f.error_notification %>
 
-        <%= f.association :categories, as: :check_boxes %>
+        <%#= f.association :categories, as: :check_boxes %>
+        <legend class="col-form-label pt-0"></legend>
+        <div class="form-group check_boxes optional user_categories category-choices">
+
+          <input type="hidden" name="user[category_ids][]" value="" />
+          <% @categories.each do |category| %>
+          <% if category.image %>
+
+            <div class="form-check category-chosen" style="background-image: url(<%= image_path category.image %>)">
+              <input class="form-check-input check_boxes optional d-none"  type="checkbox" value="<%= category.id %>" name="user[category_ids][]" id="user_category_ids_<%= category.id %>" />
+              <label class="collection_check_boxes" for="user_category_ids_<%= category.id %>"><%= category.title %></label>
+            </div>
+          <% else %>
+            <div class="form-check" >
+              <input class="form-check-input check_boxes optional d-none"  type="checkbox" value="<%= category.id %>" name="user[category_ids][]" id="user_category_ids_<%= category.id %>" />
+              <label class="collection_check_boxes" for="user_category_ids_<%= category.id %>"><%= category.title %></label>
+            </div>
+          <% end %>
+          <% end %>
+        </div>
         <%= f.input :step, as: :hidden, :input_html => { :value => 'step1' } %>
       <div class="form-actions">
-        <%= f.button :submit, "Continuer" %>
+        <%= f.button :submit, "Continuer", class:" btn cards-button" %>
       </div>
       <% end %>
     </div>

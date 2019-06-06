@@ -19,21 +19,13 @@ ActiveRecord::Schema.define(version: 2019_06_06_100138) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   create_table "company_types", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "favorites", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "project_id"
-    t.bigint "user_id"
-    t.index ["project_id"], name: "index_favorites_on_project_id"
-    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -44,12 +36,13 @@ ActiveRecord::Schema.define(version: 2019_06_06_100138) do
 
   create_table "orders", force: :cascade do |t|
     t.string "state"
-    t.integer "project_ref"
     t.integer "amount_cents", default: 0, null: false
     t.jsonb "payment"
     t.bigint "user_id"
+    t.bigint "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_orders_on_project_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -131,9 +124,7 @@ ActiveRecord::Schema.define(version: 2019_06_06_100138) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "favorites", "projects"
-  add_foreign_key "favorites", "users"
-  add_foreign_key "orders", "users"
+  add_foreign_key "orders", "projects"
   add_foreign_key "project_categories", "categories"
   add_foreign_key "project_categories", "projects"
   add_foreign_key "projects", "company_types"

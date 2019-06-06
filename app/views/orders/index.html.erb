@@ -1,0 +1,45 @@
+<div class="container">
+    <% @orders.each do |order| %>
+      <div class="row">
+          <div class="col-12 mt-3">
+              <div class="card">
+                  <div class="card-horizontal">
+                      <div class="card-body rounded border-right card-project">
+                          <h4 class="card-title">
+                            <%= order.project.title %>
+                          </h4>
+                          <p>
+                            Société d’investissements solidaires de la fondation Abbé Pierre qui utilise l’épargne citoyenne comme une réponse concrète à la lutte contre le mal-logement.
+                          </p>
+                      </div>
+                      <div class="card-body border-right">
+                          <h4 class="card-title">Impact</h4>
+                          <ul>
+                            <li class="card-text">
+                              25 jobs créés
+                            </li>
+                            <li class="card-text">
+                              15 000 burgers bio livrés
+                            </li>
+                            <li class="card-text">
+                              16 écoles sensibilisées
+                            </li>
+                          </ul>
+                      </div>
+                        <div>
+                          <h4 id="chart-title">Progress</h4>
+                          <canvas class = "chart" width="auto" height="auto">
+                          </canvas>
+                          <div class="donut-inner">
+                            <h5>
+                              <%= (order.project.amount_collected.to_f / order.project.amount_needed * 100).round %> %
+                            </h5>
+                          </div>
+                        </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+    <% end %>
+    </div>
