@@ -2,52 +2,65 @@
 
   <div class="d-flex flex-column">
 
-    <div class="d-flex mt-5 justify-content-around">
+    <div class="project-card-container d-flex mt-5 justify-content-around">
 
-      <div class="picto p-2">
-        Insert picto here
-      </div>
+<!--       <p class="project-card-picto">
+        <%= image_tag "undraw_environment_iaus.png" %>
+      </p> -->
 
       <div class="project-description-card p-2 w-40">
+
         <h1><%= @project.title.capitalize %></h1>
+        <h4>Projet proposé par la plateforme <%= @project.provider %></h4>
 
-        <h2><%= @project.city %></h2>
-        <h2><%= @project.location.title %></h2>
-
-        <p><%= @project.provider %></p>
-        <p><%= @project.company_type.title %></p>
-        <p>Insert category</p>
+        <p class="project-card-category">Insert category</p>
 
         <h2>Descritpion</h2>
         <p><%= @project.long_description %></p>
 
-        <h2>Project manager profile:</h2>
+        <h2>Porteur de projet:</h2>
         <p><%= @project.project_manager_profile %></p>
 
-        <p>Début du financement : <%= @project.start_date %></p>
-        <p>Fin du financement : <%= @project.end_date %></p>
-        <p>Notre note : <%= @project.rating %></p>
+        <p><%= @project.company_type.title %></p>
+
       </div>
 
-    <div class="d-flex flex-column project-financial-info-card p-2 w-40">
+    <div class="project-financial-info-card d-flex flex-column p-2 w-40">
 
       <div>
-        <p>Durée du remboursement :<%= @project.exit_timing %></p>
-        <p>Avancement : <%= (@project.amount_collected.to_f / @project.amount_needed * 100 ).round %> %</p>
-        <p>Montant nécessaire : <%= @project.amount_needed %></p>
-        <p>Montant récolté : <%= @project.amount_collected %></p>
-        <p>Investissement minimum : <%= @project.minimum_investment %></p>
+        <h2>Durée du remboursement :</h2>
+        <p><%= @project.exit_timing %></p>
+        <h2>Avancement : </h2>
+        <p><%= (@project.amount_collected.to_f / @project.amount_needed * 100 ).round %> %</p>
+        <h2>Montant nécessaire :</h2>
+        <p><%= @project.amount_needed %></p>
+        <h2>Montant récolté : </h2>
+        <p><%= @project.amount_collected %></p>
+        <h2>Investissement minimum : </h2>
+        <p><%= @project.minimum_investment %></p>
+        <h2>Durée du financement : </h2>
+        <p><%= @project.start_date %> - <%= @project.end_date %></p>
       </div>
 
-      <div class="btn">
+      <div class="cards-button">
         <%=  link_to "Investir dans ce projet", @project.project_url%>
       </div>
 
+      <div class="link">
       <%=  link_to "Ajouter à mes favoris", project_favorites_path(@project), method: :post%>
+      </div>
 
     </div>
 
   </div>
+
+  <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @marker.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
 
   <%=  link_to "go back", projects_path%>
 
