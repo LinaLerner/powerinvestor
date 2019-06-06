@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_06_102015) do
+ActiveRecord::Schema.define(version: 2019_06_06_100138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,17 @@ ActiveRecord::Schema.define(version: 2019_06_06_102015) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.integer "project_ref"
+    t.integer "amount_cents", default: 0, null: false
+    t.jsonb "payment"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "project_categories", force: :cascade do |t|
@@ -73,6 +84,7 @@ ActiveRecord::Schema.define(version: 2019_06_06_102015) do
     t.bigint "company_type_id"
     t.float "latitude"
     t.float "longitude"
+    t.integer "price_cents", default: 0, null: false
     t.index ["company_type_id"], name: "index_projects_on_company_type_id"
     t.index ["location_id"], name: "index_projects_on_location_id"
   end
@@ -119,6 +131,9 @@ ActiveRecord::Schema.define(version: 2019_06_06_102015) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "favorites", "projects"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "orders", "users"
   add_foreign_key "investments", "projects"
   add_foreign_key "investments", "users"
   add_foreign_key "project_categories", "categories"
