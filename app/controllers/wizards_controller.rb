@@ -2,6 +2,7 @@ class WizardsController < ApplicationController
   before_action :find_user
 
   def step1
+    @categories = Category.all
   end
 
   def step2

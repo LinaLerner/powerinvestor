@@ -1,18 +1,10 @@
 const manageCheckbox = () => {
-  const choices = document.querySelectorAll('.dirtyness-choice');
-  console.log(choices);
-
+  const choices = document.querySelectorAll('.category-chosen');
   choices.forEach( (choice) => {
     choice.addEventListener('click', (event) => {
-      const checkActive = document.querySelector('.active');
-      if (checkActive === null) {
-        event.currentTarget.classList.add("active")
-      } else {
-        checkActive.classList.remove("active")
-        event.currentTarget.classList.add("active")
-      }
+        event.currentTarget.classList.toggle("active");
+      });
     });
-  });
-};
+  };
 
 export { manageCheckbox }
