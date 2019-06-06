@@ -53,11 +53,14 @@ ActiveRecord::Schema.define(version: 2019_06_04_104645) do
 
   create_table "projects", force: :cascade do |t|
     t.string "title"
-    t.text "description"
+    t.text "short_description"
+    t.text "long_description"
+    t.string "provider"
     t.integer "amount_needed"
     t.integer "amount_collected"
     t.integer "minimum_investment"
     t.string "exit_timing"
+    t.string "city"
     t.string "financial_product"
     t.text "project_manager_profile"
     t.datetime "start_date"
