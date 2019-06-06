@@ -239,7 +239,7 @@ width: 100%;
     &:hover {
     opacity: 1;
     cursor: pointer;
-    box-shadow: 2px 3px 8px blue;
+    box-shadow: 2px 3px 8px #202135;
   }
 }
 .grid-divider {
@@ -281,4 +281,7 @@ margin-top: -41px;
   font-weight: bold;
   text-shadow: 2px 2px 3px blue;
 
+}
+.card-project{
+  flex: 0 0 30%;
 }
