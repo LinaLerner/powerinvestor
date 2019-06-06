@@ -168,9 +168,6 @@ width: 100%;
 }
 
 
-
-
-
 // Rendering cards
 
 .cards-grid {
@@ -212,4 +209,24 @@ width: 100%;
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+// dashboard
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+.grid-divider {
+  overflow-x: hidden; //quickfix to hide divider on left side
+  position: relative;
+}
+.donut-inner {
+   margin-top: -100px;
+   margin-bottom: 100px;
+}
+.donut-inner h5 {
+    margin-bottom: 5px;
+    margin-top: 34px;
+    margin-left: 132px;
 }
