@@ -27,13 +27,13 @@ ActiveRecord::Schema.define(version: 2019_06_06_100138) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "favorites", force: :cascade do |t|
+  create_table "investments", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "project_id"
     t.bigint "user_id"
-    t.index ["project_id"], name: "index_favorites_on_project_id"
-    t.index ["user_id"], name: "index_favorites_on_user_id"
+    t.index ["project_id"], name: "index_investments_on_project_id"
+    t.index ["user_id"], name: "index_investments_on_user_id"
   end
 
   create_table "locations", force: :cascade do |t|
@@ -134,6 +134,8 @@ ActiveRecord::Schema.define(version: 2019_06_06_100138) do
   add_foreign_key "favorites", "projects"
   add_foreign_key "favorites", "users"
   add_foreign_key "orders", "users"
+  add_foreign_key "investments", "projects"
+  add_foreign_key "investments", "users"
   add_foreign_key "project_categories", "categories"
   add_foreign_key "project_categories", "projects"
   add_foreign_key "projects", "company_types"

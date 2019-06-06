@@ -20,8 +20,40 @@
         <%= yield %>
         <%= javascript_include_tag 'application' %>
         <%= javascript_pack_tag 'application' %>
-    </div>
-      <!-- </div> -->
-<!--      <%= render "layouts/footer" %>
- -->  </body>
+</div>
+      </div>
+     <%= render "layouts/footer" %>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script>
+
+
+  var ctx = document.getElementById('myChart').getContext('2d');
+
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        label: "Population (millions)",
+        backgroundColor: ["#93CF51", "#D9D8DA"],
+        data: [60,40]
+      }]
+    },
+    options:
+    {
+      elements: {
+      center: {
+      text: 'Desktop',
+      color: '#36A2EB', //Default black
+      fontStyle: 'Helvetica', //Default Arial
+      sidePadding: 15 //Default 20 (as a percentage)
+      }
+      },
+      responsive: false,
+      title: {
+        display: true
+      }
+    }
+});
 </html>
+
