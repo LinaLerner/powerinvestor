@@ -17,7 +17,14 @@ if (slider) {
   }
 }
 
-// Update the current slider value (each time you drag the slider handle)
+
+document.querySelector('.franceconnect-button').addEventListener('click', function() {
+  // Make the france connect modal disappear when you click on the france connect button
+  document.querySelector('.franceconnect-modal').classList.remove('d-flex');
+  document.querySelector('.franceconnect-modal').classList.add('d-none');
+  // Simulate the Stripe button to open the stripe modal
+  document.querySelector('.stripe-payment').click();
+})
 
 
 
