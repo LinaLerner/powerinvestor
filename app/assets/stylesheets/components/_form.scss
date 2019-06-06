@@ -1,9 +1,14 @@
+.body-form{
+  background-color: #FCE6D0;
+}
+
 .edit-form{
   overflow: scroll;
   height: 100vh;
   display: flex;
   align-items: center;
   width: 50%;
+  flex-direction: column;
 }
 
 .category-choices {
@@ -19,12 +24,11 @@
   background-repeat: space;
   margin: 10px;
   padding: 20px;
-  width: 20%;
+  width: 30%;
   word-break: break-all;
   border-radius: 5px;
   opacity: .4;
   flex: 0 0 30%;
-  // color: #202135;
   text-align: center;
   color: $white;
   font-weight: bold;
@@ -33,9 +37,11 @@
     opacity: 1;
     cursor: pointer;
     box-shadow: 2px 3px 8px #202135;
+    background-color: #DCE3FD;
+    transition: background-color 0.3s;
   }
   &.active {
-  background: #FCE6D0;
+  background: #DCE3FD;
   background-size: contain;
   background-repeat: space;
   color: white;
@@ -47,4 +53,15 @@
 
 .img-form {
   flex-direction: column;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.form-question {
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
 }

@@ -6,6 +6,7 @@ class WizardsController < ApplicationController
   end
 
   def step2
+    @locations = Location.all
   end
 
   def step3
