@@ -28,9 +28,11 @@
   <script>
 
 
-  var ctx = document.getElementById('myChart').getContext('2d');
+  var charts = document.getElementsByClassName('chart')
+  charts.forEach
 
-  new Chart(ctx, {
+.getContext('2d');
+  new Chart(chart, {
     type: 'doughnut',
     data: {
       datasets: [{
