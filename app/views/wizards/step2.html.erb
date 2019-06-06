@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row d-flex justify-content-between ">
+    <div class="img-form">
+      <%= image_tag "Rocket.png" %>
+    </div>
+    <div class="edit-form">
+
+      <%= simple_form_for([@user], :url => registration_path(@user), :method => :patch) do |f| %>
+      <%= f.error_notification %>
+
+        <%= f.association :locations, as: :check_boxes %>
+        <%= f.input :step, as: :hidden, :input_html => { :value => 'step2' } %>
+      <div class="form-actions">
+        <%= f.button :submit, "Continuer" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
