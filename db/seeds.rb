@@ -10,17 +10,17 @@ CompanyType.destroy_all
 
 # CompanyType
 
-socinvest = CompanyType.new(title: "société d'investissement")
+socinvest = CompanyType.new(title: "société d'investissement", image: "investissements.png")
 socinvest.save
 
 
-start_up = CompanyType.new(title: "start up")
+start_up = CompanyType.new(title: "start up", image: "startup.png")
 start_up.save
 
-particulier = CompanyType.new(title: "particulier")
+particulier = CompanyType.new(title: "particulier", image: "particulier.png")
 particulier.save
 
-entreprise_mature = CompanyType.new(title: "entreprise mature")
+entreprise_mature = CompanyType.new(title: "entreprise mature", image: "entreprise.png")
 entreprise_mature.save
 
 # CATEGORY
@@ -61,11 +61,14 @@ amlat.save
 mo = Location.new(title: "Moyen Orient")
 mo.save
 
-afrique = Location.new(title: "Afrique Subsaharienne")
+afrique = Location.new(title: "Afrique")
 afrique.save
 
 asie = Location.new(title: "Asie")
 asie.save
+
+oceanie = Location.new(title: "Océanie")
+oceanie.save
 
 
 # PROJECTS : Lita

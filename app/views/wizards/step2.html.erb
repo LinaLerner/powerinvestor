@@ -1,29 +1,28 @@
-<div class="container">
-  <div class="row d-flex justify-content-between ">
-    <div class="img-form">
-      <%= image_tag "Rocket.png" %>
-    </div>
-    <div class="edit-form">
-
-      <%= simple_form_for([@user], :url => registration_path(@user), :method => :patch) do |f| %>
-      <%= f.error_notification %>
-
-      <legend class="col-form-label pt-0"></legend>
-          <div class="form-group check_boxes optional user_categories category-choices">
-
-            <input type="hidden" name="user[location_ids][]" value="" />
-            <% @locations.each do |location| %>
-              <div class="form-check category-chosen">
-                <input class="form-check-input check_boxes optional d-none"  type="checkbox" value="<%= location.id %>" name="user[location_ids][]" id="user_location_ids_<%= location.id %>" />
-                <label class="collection_check_boxes" for="user_location_ids_<%= location.id %>"><%= location.title %></label>
-              </div>
-              <% end %>
-        <%= f.input :step, as: :hidden, :input_html => { :value => 'step2' } %>
-      <div class="form-actions">
-        <%= f.button :submit, "Continuer", class:" btn btn-form" %>
+<div class="body-form">
+  <div class="container">
+    <div class="row d-flex justify-content-between ">
+      <div class="img-form-step2 d-flex">
+        <%= image_tag "world.png" %>
       </div>
-      <% end %>
+      <div class="edit-form">
+        <h2 class="m-4 mb-4">Okay, et dans quelles régions du globe terrestre de la Terre ?</h2>
+        <%= simple_form_for([@user], :url => registration_path(@user), :method => :patch) do |f| %>
+        <%= f.error_notification %>
+        <legend class="col-form-label pt-0"></legend>
+        <div class="form-group check_boxes optional user_locations category-choices">
+          <input type="hidden" name="user[location_ids][]" value="" />
+          <% @locations.each do |location| %>
+            <div class="form-check category-chosen category-chosen-step2">
+              <input class="form-check-input check_boxes optional d-none"  type="checkbox" value="<%= location.id %>" name="user[location_ids][]" id="user_location_ids_<%= location.id %>" />
+              <label class="collection_check_boxes" for="user_location_ids_<%= location.id %>"><%= location.title %></label>
+            </div>
+            <% end %>
+          <%= f.input :step, as: :hidden, :input_html => { :value => 'step2' } %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Continuer", class:" btn btn-form" %>
+        </div>
+        <% end %>
     </div>
   </div>
 </div>
-

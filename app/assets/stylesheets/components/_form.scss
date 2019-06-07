@@ -13,7 +13,7 @@
 
 .category-choices {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -22,7 +22,7 @@
   background:  #FCE6D0;
   background-size: contain;
   background-repeat: space;
-  margin: 10px;
+  margin: 15px;
   padding: 20px;
   width: 30%;
   word-break: break-all;
@@ -64,4 +64,34 @@
   display: flex;
   justify-content: center;
   font-weight: bolder;
+}
+
+.img-form-step2 {
+  align-items: center;
+}
+
+.category-chosen-step2 {
+  display : flex;
+  align-items : center;
+  justify-content: center;
+  margin: 20px;
+  color: #202135;
+  opacity: 1;
+  text-shadow: none;
+  border: solid 1px;
+  border-color: #202135;
+  padding: 15px;
+  &.active {
+  background: #DCE3FD;
+  background-size: contain;
+  background-repeat: space;
+  color:  #202135;
+  opacity: 1;
+  border: solid 2px;
+  border-color: #202135;
+  }
+}
+
+.investment {
+  width: 100%;
 }

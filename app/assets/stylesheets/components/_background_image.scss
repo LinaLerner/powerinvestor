@@ -1,5 +1,26 @@
 .img-form {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  img {
+    width: 100%;
+    height: 380px;
+  }
+}
+
+.img-form-step2  {
   width: 50%;
+  display: flex;
+  align-items: center;
+  img {
+    width: 100%;
+    height: 380px;
+  }
+}
+
+
+.img-form-step3  {
+  width: 40%;
   display: flex;
   align-items: center;
   img {
