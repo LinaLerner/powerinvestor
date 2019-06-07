@@ -16,7 +16,6 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.datetime :end_date
       t.string :project_url
       t.integer :rating
-      t.string :impact
       t.timestamps
     end
   end
