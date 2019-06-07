@@ -5,6 +5,8 @@
 ProjectCategory.destroy_all
 Order.destroy_all
 UserCategory.destroy_all
+UserCompanyType.destroy_all
+UserLocation.destroy_all
 Project.destroy_all
 Category.destroy_all
 Location.destroy_all
