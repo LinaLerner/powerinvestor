@@ -55,7 +55,11 @@
 
           <div class="cards-middle"> <%= project.short_description %>
           </div>
-         <div class="cards-info">  <input type="button" class="cards-button" value="découvrir le projet">
+         <div class="cards-info">
+          <a href=<%= "/projects/#{project.id}"  %>>
+            <input type="button" class="cards-button" value="découvrir le projet">
+          </a>
+
          </div>
 
         <div class="cards-footer">
