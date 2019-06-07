@@ -72,7 +72,7 @@ asie.save
 
 solifap = Project.create(
   title: "Solifap",
-  impact: "3000 personnes relogées,500 logements remis aux normes,5 foyers construits"
+  impact: "3000 personnes relogées,500 logements remis aux normes,5 foyers construits",
   short_description: "Société d’investissements solidaires de la fondation Abbé Pierre qui utilise l’épargne citoyenne comme une réponse concrète à la lutte contre le mal-logement. ",
   long_description: "Parce que bénéficier d'un logement c'est reconstruire une vie, Solifap est une société d'investissements solidaires qui soutient les associations luttant contre le mal-logement. Plus de 60 ans après « l’appel à l'insurrection de la bonté » de l’Abbé Pierre, la situation du mal-logement en France reste encore une préoccupation majeure pour 12 millions de français. La Fondation Abbé Pierre, qui a pour mission de permettre à toute personne démunie d'accéder à un logement décent et à une vie digne, décide ainsi de créer Solifap en 2014 pour déployer des moyens additionnels pour lutter contre le mal-logement, en s’appuyant sur l’épargne citoyenne. Solifap permet à l’épargne des citoyens de devenir un levier d’action direct afin de soutenir les associations qui luttent contre le mal logement, en augmentant leur capacité à produire des offres de logements très sociaux, en garantissant leur développement financier et en améliorant l'efficacité de leur modèle socio-économique. Solifap est titulaire du label Finansol garantissant la transparence et le caractère solidaire du produit financier qu’elle propose.",
   provider: "Lita",
@@ -116,7 +116,7 @@ ProjectCategory.create(project_id: bioburger.id, category_id:alimentation.id)
 
 ecomegot = Project.create(
   title: "ecomegot",
-  impact: "7 millions de mégots collectés, 3650 citoyens sensibi événements de sensisibilisation,200 bornes solidaires installées"
+  impact: "7 millions de mégots collectés, 3650 citoyens sensibi événements de sensisibilisation,200 bornes solidaires installées",
   short_description: "Une solution complète, professionnelle et locale de sensibilisation, collecte et valorisation de mégots de cigarette pour les acteurs privés et publics",
   long_description: "ÉcoMégot propose une solution complète, professionnelle et locale de sensibilisation, collecte et valorisation de mégots de cigarette pour les acteurs privés et publics. Le projet est né au début de l’année 2016, suite à la prise de conscience d’Erwin Faure, son fondateur : aucune solution de dépollution et de recyclage viable des mégots n’existait en France. Inspiré par des initiatives développées à l’étranger, ÉcoMégot a développé une solution innovante mettant en symbiose économie circulaire, emplois locaux et filière de recyclage locale. 100% français, 100% artisanaux et 100% résistants : ÉcoMégot accompagne tous les volontaires, tous secteurs confondus, dans la création de leur propre espace zéro mégot. Le mégot, ce petit déchet polluant tristement fondu dans le paysage urbain, peut devenir une ressource économique et un acteur social. C’est tout le pari lancé par ÉcoMégot !",
   provider: "Lita",
