@@ -1,3 +1,39 @@
+
+
+ <div class="container">
+
+  <!-- [...] -->
+<%= form_tag projects_path, method: :get do  %>
+  <%#= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a project"
+  %>
+  <div class="categories"> <br><br>Category</div>
+  <% @categories.each do |category| %>
+    <input type="checkbox" id="<%= category.title %>" name="category[]" value="<%= category.title %>">
+    <label for="<%= category.title %>"><%= category.title %></label>
+  <% end %>
+
+
+  <!-- <select name="category" id="category">
+    <#% @categories.each do |category| %>
+      <option value="<%#= category.title %>"><%#= category.title.capitalize %></option>
+    <#% end %>
+  </select> -->
+  <!-- <input type="text" name="category" placeholder="category"> -->
+ <!--  <input type="text" name="location" placeholder="location">
+  <input type="text" name="invest" placeholder="invest">
+  <input type="text" name="company_type" placeholder="company_type"> -->
+  <input type="submit">
+
+<% end %>
+<!-- the list of movies -->
+
+
+  <div class="header"></h2>Plus de 3725 projets<h2>
+  </div>
+
 <div class="container">
   <div class="header"><h1> Nos recommandations<h1>
   </div>
@@ -12,6 +48,11 @@
            </div>
           <% end %>
 
+
+<img src="" alt="" class="cards-picto-rate">
+        <h2><%= project.rating %>%</h2></div>
+
+
           <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559664386/Remove-card-icon_fqvuj1.png" alt="Remove project" class="cards-picto-exit">
         </div>
 
@@ -19,6 +60,16 @@
         </div>
 
         <div class="cards-middle"> <%= project.short_description %>
+        </div>
+         <div class="cards-info">  <input type="button" class="cards-button" value="découvrir le projet">
+        </div>
+        <div class="cards-footer">
+          <div class="cards-picto-box">
+            <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559665618/battery-low_hdtxf5.png" alt="progression" class="cards-picto-status"> <%= (project.amount_collected.to_f / project.amount_needed * 100 ).round %>%
+            <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559665618/euro_hd0zqv.png" alt="amount" class="cards-picto-amount"> <%= project.minimum_investment %>€/min.
+
+          </div>
+        </div>
         </div>
          <div class="cards-info">  <input type="button" class="cards-button" value="Ajouter au comparateur"><%= link_to "show", project_path(project)  %>
         </div>

@@ -8,6 +8,7 @@ Project.destroy_all
 Category.destroy_all
 Location.destroy_all
 CompanyType.destroy_all
+User.destroy_all
 # CompanyType
 
 socinvest = CompanyType.new(title: "société d'investissement", image: "investissements.png")
@@ -69,7 +70,11 @@ asie.save
 
 oceanie = Location.new(title: "Océanie")
 oceanie.save
-
+# User : Merwane
+merwane = User.new
+merwane.email = "merwanehamadi@gmail.com"
+merwane.password = "powerinvestor"
+merwane.save
 
 # PROJECTS : Lita
 
@@ -91,10 +96,11 @@ solifap = Project.create(
   start_date: "08/01/2019",
   end_date: "02/06/2019",
   project_url: "https://fr.lita.co/fr/projects/681-solifap",
-  rating: 3
+  rating: 87
   )
 ProjectCategory.create(project: solifap, category:pauvrete)
 ProjectCategory.create(project: solifap, category:egalite)
+Order.create(project: solifap, user: merwane)
 bioburger = Project.create(
   title: "Bioburger",
   short_description: "Premier fast-food 100/%/ bio qui change tous les codes de la restauration rapide. ",
@@ -113,11 +119,12 @@ bioburger = Project.create(
   start_date: "08/08/2019",
   end_date: "02/11/2019",
   project_url: "https://fr.lita.co/fr/projects/673-bioburger",
-  rating: 5
+  rating: 81
   )
 ProjectCategory.create(project_id: bioburger.id, category:alimentation)
 ProjectCategory.create(project_id: bioburger.id, category:agriculture)
 ProjectCategory.create(project_id: bioburger.id, category:sante)
+Order.create(project: bioburger, user: merwane)
 ecomegot = Project.create(
   title: "ecomegot",
   impact: "7 millions de mégots collectés, 3650 citoyens sensibi événements de sensisibilisation,200 bornes solidaires installées",
@@ -136,11 +143,13 @@ ecomegot = Project.create(
   start_date: "08/02/2019",
   end_date: "02/09/2019",
   project_url: "https://fr.lita.co/fr/projects/668-ecomegot",
-  rating: 3
+  rating: 79
   )
 ProjectCategory.create(project_id: ecomegot.id, category:education)
 ProjectCategory.create(project_id: ecomegot.id, category:agriculture)
 ProjectCategory.create(project_id: ecomegot.id, category:sante)
+Order.create(project: ecomegot, user: merwane)
+
 solarbrother = Project.create(
   title: "solar brother",
   provider: "Lita",
@@ -158,7 +167,7 @@ solarbrother = Project.create(
   start_date: "08/06/2019",
   end_date: "02/06/2019",
   project_url: "https://fr.lita.co/fr/projects/679-solar-brother",
-  rating: 2
+  rating: 78
   )
 ProjectCategory.create(project_id: solarbrother.id, category_id:energie.id)
 ProjectCategory.create(project_id: solarbrother.id, category_id:environnement.id)
@@ -180,7 +189,7 @@ wheeliz = Project.create(
   start_date: "08/06/2019",
   end_date: "02/06/2019",
   project_url: "https://fr.lita.co/fr/projects/676-wheeliz",
-  rating: 1
+  rating: 70
   )
 ProjectCategory.create(project_id: wheeliz.id, category_id:egalite.id)
 
@@ -203,7 +212,7 @@ terraliacorporate = Project.create(
   start_date: "01/02/2019",
   end_date: "02/06/2019",
   project_url: "https://www.wiseed.com/fr/projet/26071561-terralia-corporate",
-  rating: 2
+  rating: 70
   )
 ProjectCategory.create(project_id: terraliacorporate.id, category_id:environnement.id)
 
@@ -224,7 +233,7 @@ agronutris = Project.create(
   start_date: "01/02/2019",
   end_date: "02/06/2019",
   project_url: "https://www.wiseed.com/fr/projet/24080617-agronutris",
-  rating: 5
+  rating: 69
   )
 ProjectCategory.create(project_id: agronutris.id, category_id:alimentation.id)
 ProjectCategory.create(project_id: agronutris.id, category_id:agriculture.id)
@@ -247,7 +256,7 @@ herami = Project.create(
   start_date: "01/02/2019",
   end_date: "02/06/2019",
   project_url: "https://www.wiseed.com/fr/projet/24080617-herami",
-  rating: 2
+  rating: 54
   )
 ProjectCategory.create(project_id: herami.id, category_id:sante.id)
 
@@ -270,7 +279,7 @@ nuevaluz = Project.create(
   start_date: "01/02/2019",
   end_date: "02/06/2019",
   project_url: "https://www.babyloan.org/fr/projets_solidaires/jennifer-carole-t/la-boutique-de-jennifer-408874/42645",
-  rating: 1
+  rating: 53
   )
 ProjectCategory.create(project_id: nuevaluz.id, category_id:pauvrete.id)
 ProjectCategory.create(project_id: nuevaluz.id, category_id:egalite.id)
@@ -292,7 +301,7 @@ can = Project.create(
   start_date: "01/02/2019",
   end_date: "02/06/2019",
   project_url: "https://www.babyloan.org/fr/projets_solidaires/c259n-l/lelevage-bovin-de-can/43217",
-  rating: 1
+  rating: 50
   )
 ProjectCategory.create(project_id: can.id, category_id:pauvrete.id)
 ProjectCategory.create(project_id: can.id, category_id:agriculture.id)
@@ -315,7 +324,7 @@ chris = Project.create(
   start_date: "01/02/2019",
   end_date: "02/06/2019",
   project_url: "https://www.babyloan.org/fr/projets_solidaires/chris-d/le-reportage-de-chris-/43325",
-  rating: 1
+  rating: 20
   )
 ProjectCategory.create(project_id: chris.id, category_id:pauvrete.id)
 ProjectCategory.create(project_id: chris.id, category_id:egalite.id)

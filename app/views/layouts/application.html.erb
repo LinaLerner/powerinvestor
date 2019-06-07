@@ -13,6 +13,8 @@
   </head>
   <body>
     <div id="page-container">
+     <div id="content-wrap">
+        <% unless controller_name == "sessions" || controller_name == "registrations" %>
      <!-- <div id="content-wrap"> -->
         <% unless controller_name == "pages" || controller_name == "sessions" || controller_name == "registrations" %>
         <%= render "layouts/navbar" %>
@@ -26,15 +28,13 @@
   </body>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script>
-
-
   Array.from(document.getElementsByClassName('chart')).forEach((chart) => {
     new Chart(chart, {
     type: 'doughnut',
     data: {
       datasets: [{
         label: "Population (millions)",
-        backgroundColor: ["#93CF51", "#D9D8DA"],
+        backgroundColor: ["#202135", "#D9D8DA"],
         data: [parseInt(chart.dataset.progress, 10), 100 - parseInt(chart.dataset.progress, 10) ]
       }]
     },
@@ -46,8 +46,6 @@
       }
     }});
   });
-
-
   </script>
 </html>
 

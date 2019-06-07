@@ -23,21 +23,15 @@
              <%= category.title %>
            </div>
           <% end %>
-
-          <% @project.categories.to_a.each do |category| %>
-           <div class="project-card-tag mr-3">
-             <%= category.title %>
-           </div>
-          <% end %>
         </div>
 
         <h1><%= @project.title.capitalize %></h1>
         <h4>Projet proposé par la plateforme <%= @project.provider %></h4>
 
-        <h2>Descritpion</h2>
+        <h2>Description</h2>
         <p><%= @project.long_description %></p>
 
-        <h2>Porteur de projet:</h2>
+        <h2>Porteur du projet:</h2>
         <p><%= @project.project_manager_profile %></p>
 
         <p>Type de porteur de projet : <%= @project.company_type.title %></p>
@@ -47,40 +41,53 @@
     <div class="project-financial-info-card d-flex flex-column p-2 w-40">
 
       <div>
-        <div class="d-flex">
-          <div>
-            <h2>Durée du remboursement :</h2>
+        <div class="d-flex mt-3">
+          <div class="center">
+            <h2>Durée du remboursement</h2>
             <p><%= @project.exit_timing %> mois</p>
           </div>
-          <div>
-            <h2>Montant nécessaire :</h2>
+          <div class="center">
+            <h2>Montant nécessaire</h2>
             <p><%= @project.amount_needed %>€</p>
           </div>
         </div>
-        <h2>Avancement : </h2>
-        <p><%= (@project.amount_collected.to_f / @project.amount_needed * 100 ).round %> %</p>
-        <h2>Montant nécessaire :</h2>
-        <p><%= @project.amount_needed %>€</p>
-        <h2>Montant récolté : </h2>
-        <p><%= @project.amount_collected %>€</p>
+
+        <div>
+          <h4 id="chart-title">Avancement</h4>
+          <canvas class = "chart" data-progress = "<%= (@project.amount_collected.to_f / @project.amount_needed * 100).round %>"width="auto" height="auto"></canvas>
+          <div class="donut-show">
+            <h5><%= (@project.amount_collected.to_f / @project.amount_needed * 100).round %> %</h5>
+          </div>
+        </div>
+
+        <div class="center">
+            <h2>Montant récolté</h2>
+            <p><%= @project.amount_collected %>€</p>
+        </div>
 
         <div class="d-flex">
-          <div>
+          <div class="center">
             <h2>Investissement minimum</h2>
             <p><%= @project.minimum_investment %>€</p>
           </div>
-          <div>
+          <div class="center">
             <h2>Durée du financement</h2>
             <p><%= @project.start_date.strftime('%F') %> - <%= @project.end_date.strftime('%F') %></p>
           </div>
         </div>
       </div>
 
-      <%= form_tag orders_path, remote: true do %>
-      <%= hidden_field_tag 'project_id', @project.id %>
-      <%= number_field_tag 'amount_cents'%>
-      <%= submit_tag 'Investir', class: 'invest-btn' %>
-      <% end %>
+      <div class="d-flex flex-column invest-form">
+        <div>
+          <%= form_tag orders_path, remote: true do %>
+          <%= hidden_field_tag 'project_id', @project.id %>
+          <%= number_field_tag 'amount_cents'%>
+        </div>
+        <div>
+          <%= submit_tag 'Investir maintenant !', class: 'invest-btn' %>
+          <% end %>
+        </div>
+      </div>
 
     </div>
 
