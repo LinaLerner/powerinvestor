@@ -3,11 +3,11 @@
 
 # CLEAN ERRRRYTHING
 ProjectCategory.destroy_all
+Order.destroy_all
 Project.destroy_all
 Category.destroy_all
 Location.destroy_all
 CompanyType.destroy_all
-
 # CompanyType
 
 socinvest = CompanyType.new(title: "société d'investissement", image: "investissements.png")
@@ -93,8 +93,8 @@ solifap = Project.create(
   project_url: "https://fr.lita.co/fr/projects/681-solifap",
   rating: 3
   )
-ProjectCategory.create(project_id: solifap.id, category_id:pauvrete.id)
-
+ProjectCategory.create(project: solifap, category:pauvrete)
+ProjectCategory.create(project: solifap, category:egalite)
 bioburger = Project.create(
   title: "Bioburger",
   short_description: "Premier fast-food 100/%/ bio qui change tous les codes de la restauration rapide. ",
@@ -115,8 +115,9 @@ bioburger = Project.create(
   project_url: "https://fr.lita.co/fr/projects/673-bioburger",
   rating: 5
   )
-ProjectCategory.create(project_id: bioburger.id, category_id:alimentation.id)
-
+ProjectCategory.create(project_id: bioburger.id, category:alimentation)
+ProjectCategory.create(project_id: bioburger.id, category:agriculture)
+ProjectCategory.create(project_id: bioburger.id, category:sante)
 ecomegot = Project.create(
   title: "ecomegot",
   impact: "7 millions de mégots collectés, 3650 citoyens sensibi événements de sensisibilisation,200 bornes solidaires installées",
@@ -137,8 +138,9 @@ ecomegot = Project.create(
   project_url: "https://fr.lita.co/fr/projects/668-ecomegot",
   rating: 3
   )
-ProjectCategory.create(project_id: ecomegot.id, category_id:environnement.id)
-
+ProjectCategory.create(project_id: ecomegot.id, category:education)
+ProjectCategory.create(project_id: ecomegot.id, category:agriculture)
+ProjectCategory.create(project_id: ecomegot.id, category:sante)
 solarbrother = Project.create(
   title: "solar brother",
   provider: "Lita",
@@ -159,6 +161,7 @@ solarbrother = Project.create(
   rating: 2
   )
 ProjectCategory.create(project_id: solarbrother.id, category_id:energie.id)
+ProjectCategory.create(project_id: solarbrother.id, category_id:environnement.id)
 
 wheeliz = Project.create(
   title: "Paris",
@@ -224,6 +227,8 @@ agronutris = Project.create(
   rating: 5
   )
 ProjectCategory.create(project_id: agronutris.id, category_id:alimentation.id)
+ProjectCategory.create(project_id: agronutris.id, category_id:agriculture.id)
+
 
 herami = Project.create(
   title: "Hera-mi",
@@ -268,6 +273,7 @@ nuevaluz = Project.create(
   rating: 1
   )
 ProjectCategory.create(project_id: nuevaluz.id, category_id:pauvrete.id)
+ProjectCategory.create(project_id: nuevaluz.id, category_id:egalite.id)
 
 can = Project.create(
   title: "Can",
@@ -289,6 +295,8 @@ can = Project.create(
   rating: 1
   )
 ProjectCategory.create(project_id: can.id, category_id:pauvrete.id)
+ProjectCategory.create(project_id: can.id, category_id:agriculture.id)
+
 
 chris = Project.create(
   title: "chris",
@@ -310,3 +318,5 @@ chris = Project.create(
   rating: 1
   )
 ProjectCategory.create(project_id: chris.id, category_id:pauvrete.id)
+ProjectCategory.create(project_id: chris.id, category_id:egalite.id)
+
