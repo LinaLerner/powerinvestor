@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 2019_06_06_100138) do
     t.datetime "end_date"
     t.string "project_url"
     t.integer "rating"
+    t.string "impact"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "location_id"

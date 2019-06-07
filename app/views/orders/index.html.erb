@@ -15,20 +15,16 @@
                       <div class="card-body border-right">
                           <h4 class="card-title">Impact</h4>
                           <ul>
+                            <% order.project.impact.split(",").each do |impact| %>
                             <li class="card-text">
-                              25 jobs créés
+                              <%= impact %>
                             </li>
-                            <li class="card-text">
-                              15 000 burgers bio livrés
-                            </li>
-                            <li class="card-text">
-                              16 écoles sensibilisées
-                            </li>
+                            <% end %>
                           </ul>
                       </div>
                         <div>
                           <h4 id="chart-title">Progress</h4>
-                          <canvas class = "chart" width="auto" height="auto">
+                          <canvas class = "chart" data-progress = "<%= (order.project.amount_collected.to_f / order.project.amount_needed * 100).round %>"width="auto" height="auto">
                           </canvas>
                           <div class="donut-inner">
                             <h5>
