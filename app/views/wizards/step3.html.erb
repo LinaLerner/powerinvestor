@@ -1,0 +1,33 @@
+<div class="body-form">
+  <div class="container">
+    <div class="row d-flex justify-content-between ">
+      <div class="img-form-step3 d-flex">
+        <%= image_tag "step3.png" %>
+      </div>
+      <div class="edit-form">
+        <h2 class="m-4 mb-4">Vous êtes plutôt quel type de porteur de projet?</h2>
+        <%= simple_form_for([@user], :url => registration_path(@user), :method => :patch) do |f| %>
+          <%= f.error_notification %>
+          <legend class="col-form-label pt-0"></legend>
+          <div class="form-group check_boxes optional user_company_types category-choices">
+            <input type="hidden" name="user[company_type_ids][]" value="" />
+            <% @company_types.each do |company_type| %>
+              <div class="form-check category-chosen" style="background-image: url(<%= image_path company_type.image %>)">
+                <input class="form-check-input check_boxes optional d-none"  type="checkbox" value="<%= company_type.id %>" name="user[company_type_ids][]" id="user_company_type_ids_<%= company_type.id %>" />
+                <label class="collection_check_boxes" for="user_company_type_ids_<%= company_type.id %>"><%= company_type.title %></label>
+              </div>
+            <% end %>
+          <div class="investment mt-5">
+            <h3 class="mb-4">Dites nous combien</h3>
+            <%= f.input :maximum_investment, as: :range, :input_html => { :min => '100' }, :input_html => { :max => '10 000' }, :input_html => { :class => 'slider' }, label_html: { class: 'd-none' } %>
+            <p>Investissement max: <span id="demo"></span></p>
+          </div>
+          <div class="form-actions">
+          <%= f.input :step, as: :hidden, :input_html => { :value => 'step3' } %>
+          <%= f.button :submit, "Impressionnez moi!", class:"btn btn-form" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

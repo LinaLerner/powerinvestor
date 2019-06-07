@@ -25,11 +25,17 @@ class ProjectsController < ApplicationController
     # if params[:invest_type].present?
     #   @projects = Project.invest_search(params[:invest])
     # end
+    @categories = Category.all
+    @project_categories = ProjectCategory.all
   end
 
 
   def show
     @project = Project.find_by_id(params[:id])
+    @marker = {
+        lat: @project.latitude,
+        lng: @project.longitude
+       }
   end
 end
 

@@ -18,6 +18,9 @@ gem 'webpacker'
 gem 'devise'
 gem 'pg_search'
 gem 'filterrific'
+gem 'geocoder'
+gem 'money-rails'
+gem 'stripe'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

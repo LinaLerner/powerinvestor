@@ -10,4 +10,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   accepts_nested_attributes_for :user_categories
+  has_many :orders
 end

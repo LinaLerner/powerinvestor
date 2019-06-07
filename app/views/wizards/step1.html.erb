@@ -1,0 +1,35 @@
+<div class="body-form">
+  <div class="container">
+    <div class="row d-flex justify-content-between ">
+      <div class="img-form d-flex">
+        <h1 class="m-4 mb-5 form-question">Hello <%= @user.first_name %></h1>
+        <%= image_tag "step1.png" %>
+      </div>
+      <div class="edit-form">
+        <h2 class="mt-4">Pour commencer, dans quels domaines souhaitez-vous investir ?</h2>
+        <%= simple_form_for([@user], :url => registration_path(@user), :method => :patch) do |f| %>
+        <%= f.error_notification %>
+
+          <legend class="col-form-label pt-0"></legend>
+          <div class="form-group check_boxes optional user_categories category-choices">
+
+            <input type="hidden" name="user[category_ids][]" value="" />
+            <% @categories.each do |category| %>
+              <div class="form-check category-chosen" style="background-image: url(<%= image_path category.image %>)">
+                <input class="form-check-input check_boxes optional d-none"  type="checkbox" value="<%= category.id %>" name="user[category_ids][]" id="user_category_ids_<%= category.id %>" />
+                <label class="collection_check_boxes" for="user_category_ids_<%= category.id %>"><%= category.title %></label>
+              </div>
+            <% end %>
+          </div>
+          <%= f.input :step, as: :hidden, :input_html => { :value => 'step1' } %>
+        <div class="form-actions">
+          <%= f.button :submit, "Continuer", class:" btn btn-form" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
