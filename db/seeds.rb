@@ -9,6 +9,7 @@ Category.destroy_all
 Location.destroy_all
 CompanyType.destroy_all
 User.destroy_all
+UserCategory.destroy_all
 # CompanyType
 
 socinvest = CompanyType.new(title: "société d'investissement", image: "investissements.png")
@@ -100,7 +101,6 @@ solifap = Project.create(
   )
 ProjectCategory.create(project: solifap, category:pauvrete)
 ProjectCategory.create(project: solifap, category:egalite)
-Order.create(project: solifap, user: merwane)
 bioburger = Project.create(
   title: "Bioburger",
   short_description: "Premier fast-food 100/%/ bio qui change tous les codes de la restauration rapide. ",
