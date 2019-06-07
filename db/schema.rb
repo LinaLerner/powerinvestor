@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_04_104645) do
+ActiveRecord::Schema.define(version: 2019_06_06_161417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 2019_06_04_104645) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text "content"
+    t.string "searchable_type"
+    t.bigint "searchable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
+  end
+
   create_table "project_categories", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -53,11 +62,14 @@ ActiveRecord::Schema.define(version: 2019_06_04_104645) do
 
   create_table "projects", force: :cascade do |t|
     t.string "title"
-    t.text "description"
+    t.text "short_description"
+    t.text "long_description"
+    t.string "provider"
     t.integer "amount_needed"
     t.integer "amount_collected"
     t.integer "minimum_investment"
     t.string "exit_timing"
+    t.string "city"
     t.string "financial_product"
     t.text "project_manager_profile"
     t.datetime "start_date"
