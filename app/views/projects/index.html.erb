@@ -31,12 +31,12 @@
 <!-- the list of movies -->
 
 
+
+
   <div class="header"></h2>Plus de 3725 projets<h2>
   </div>
 
 <div class="container">
-  <div class="header"><h1> Nos recommandations<h1>
-  </div>
 
   <div class="cards-grid">
     <% @projects.each do |project| %>
@@ -47,40 +47,24 @@
              <%= category.title %>
            </div>
           <% end %>
-
-
-<img src="" alt="" class="cards-picto-rate">
-        <h2><%= project.rating %>%</h2></div>
-
-
           <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559664386/Remove-card-icon_fqvuj1.png" alt="Remove project" class="cards-picto-exit">
-        </div>
+          </div>
 
-        <div class="cards-header"><h2><%= project.title %></h2>
-        </div>
+          <div class="cards-header"><h2><%= project.title %></h2>
+          </div>
 
-        <div class="cards-middle"> <%= project.short_description %>
-        </div>
+          <div class="cards-middle"> <%= project.short_description %>
+          </div>
          <div class="cards-info">  <input type="button" class="cards-button" value="découvrir le projet">
-        </div>
+         </div>
+
         <div class="cards-footer">
           <div class="cards-picto-box">
             <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559665618/battery-low_hdtxf5.png" alt="progression" class="cards-picto-status"> <%= (project.amount_collected.to_f / project.amount_needed * 100 ).round %>%
             <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559665618/euro_hd0zqv.png" alt="amount" class="cards-picto-amount"> <%= project.minimum_investment %>€/min.
-
           </div>
         </div>
         </div>
-         <div class="cards-info">  <input type="button" class="cards-button" value="Ajouter au comparateur"><%= link_to "show", project_path(project)  %>
-        </div>
-        <div class="cards-footer">
-          <div class="cards-picto-box">
-            <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559665618/battery-low_hdtxf5.png" alt="progression" class="cards-picto-status"> <%= (project.amount_collected.to_f / project.amount_needed * 100 ).round %>
-            <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559665618/euro_hd0zqv.png" alt="amount" class="cards-picto-amount"> <%= project.minimum_investment %>
-            <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559665619/rate_wbupkd.png" alt="rate" class="cards-picto-rate"> <%= project.rating %>
-          </div>
-        </div>
-      </div>
     <% end %>
     </div>
 </div>
