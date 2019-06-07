@@ -4,6 +4,9 @@
 # CLEAN ERRRRYTHING
 ProjectCategory.destroy_all
 Order.destroy_all
+UserCategory.destroy_all
+UserCompanyType.destroy_all
+UserLocation.destroy_all
 Project.destroy_all
 Category.destroy_all
 Location.destroy_all
@@ -100,7 +103,6 @@ solifap = Project.create(
   )
 ProjectCategory.create(project: solifap, category:pauvrete)
 ProjectCategory.create(project: solifap, category:egalite)
-Order.create(project: solifap, user: merwane)
 bioburger = Project.create(
   title: "Bioburger",
   short_description: "Premier fast-food 100/%/ bio qui change tous les codes de la restauration rapide. ",
