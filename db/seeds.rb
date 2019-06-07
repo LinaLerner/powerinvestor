@@ -8,6 +8,7 @@ Project.destroy_all
 Category.destroy_all
 Location.destroy_all
 CompanyType.destroy_all
+User.destroy_all
 # CompanyType
 
 socinvest = CompanyType.new(title: "société d'investissement", image: "investissements.png")
@@ -69,7 +70,11 @@ asie.save
 
 oceanie = Location.new(title: "Océanie")
 oceanie.save
-
+# User : Merwane
+merwane = User.new
+merwane.email = "merwanehamadi@gmail.com"
+merwane.password = "powerinvestor"
+merwane.save
 
 # PROJECTS : Lita
 
@@ -95,6 +100,7 @@ solifap = Project.create(
   )
 ProjectCategory.create(project: solifap, category:pauvrete)
 ProjectCategory.create(project: solifap, category:egalite)
+Order.create(project: solifap, user: merwane)
 bioburger = Project.create(
   title: "Bioburger",
   short_description: "Premier fast-food 100/%/ bio qui change tous les codes de la restauration rapide. ",
@@ -118,6 +124,7 @@ bioburger = Project.create(
 ProjectCategory.create(project_id: bioburger.id, category:alimentation)
 ProjectCategory.create(project_id: bioburger.id, category:agriculture)
 ProjectCategory.create(project_id: bioburger.id, category:sante)
+Order.create(project: bioburger, user: merwane)
 ecomegot = Project.create(
   title: "ecomegot",
   impact: "7 millions de mégots collectés, 3650 citoyens sensibi événements de sensisibilisation,200 bornes solidaires installées",
@@ -141,6 +148,8 @@ ecomegot = Project.create(
 ProjectCategory.create(project_id: ecomegot.id, category:education)
 ProjectCategory.create(project_id: ecomegot.id, category:agriculture)
 ProjectCategory.create(project_id: ecomegot.id, category:sante)
+Order.create(project: ecomegot, user: merwane)
+
 solarbrother = Project.create(
   title: "solar brother",
   provider: "Lita",
