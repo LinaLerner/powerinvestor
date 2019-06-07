@@ -10,6 +10,7 @@ class WizardsController < ApplicationController
   end
 
   def step3
+    @company_types = CompanyType.all
   end
 
   private
