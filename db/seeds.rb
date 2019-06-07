@@ -4,12 +4,12 @@
 # CLEAN ERRRRYTHING
 ProjectCategory.destroy_all
 Order.destroy_all
+UserCategory.destroy_all
 Project.destroy_all
 Category.destroy_all
 Location.destroy_all
 CompanyType.destroy_all
 User.destroy_all
-UserCategory.destroy_all
 # CompanyType
 
 socinvest = CompanyType.new(title: "société d'investissement", image: "investissements.png")
