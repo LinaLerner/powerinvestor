@@ -16,7 +16,6 @@
      <div id="content-wrap">
         <% unless controller_name == "sessions" || controller_name == "registrations" %>
      <!-- <div id="content-wrap"> -->
-        <% unless controller_name == "pages" || controller_name == "sessions" || controller_name == "registrations" %>
         <%= render "layouts/navbar" %>
         <% end %>
         <%= yield %>
