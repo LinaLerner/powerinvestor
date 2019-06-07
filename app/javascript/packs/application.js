@@ -17,6 +17,18 @@ if (slider) {
   }
 }
 
+const spinner = document.querySelector(".sk-circle");
+const submit = document.querySelector(".submit");
+
+submit.addEventListener('click', (event) => {
+  event.preventDefault()
+  spinner.classList.remove("d-none");
+  setTimeout((e) => {
+    const form = document.querySelector(".edit_user");
+    form.submit();
+  }, 2000)
+})
+
 
 // document.querySelector('.franceconnect-button').addEventListener('click', function() {
 //   // Make the france connect modal disappear when you click on the france connect button
