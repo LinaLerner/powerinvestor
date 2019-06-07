@@ -72,11 +72,12 @@ asie.save
 
 solifap = Project.create(
   title: "Solifap",
+  impact: "3000 personnes relogées,500 logements remis aux normes,5 foyers construits"
   short_description: "Société d’investissements solidaires de la fondation Abbé Pierre qui utilise l’épargne citoyenne comme une réponse concrète à la lutte contre le mal-logement. ",
   long_description: "Parce que bénéficier d'un logement c'est reconstruire une vie, Solifap est une société d'investissements solidaires qui soutient les associations luttant contre le mal-logement. Plus de 60 ans après « l’appel à l'insurrection de la bonté » de l’Abbé Pierre, la situation du mal-logement en France reste encore une préoccupation majeure pour 12 millions de français. La Fondation Abbé Pierre, qui a pour mission de permettre à toute personne démunie d'accéder à un logement décent et à une vie digne, décide ainsi de créer Solifap en 2014 pour déployer des moyens additionnels pour lutter contre le mal-logement, en s’appuyant sur l’épargne citoyenne. Solifap permet à l’épargne des citoyens de devenir un levier d’action direct afin de soutenir les associations qui luttent contre le mal logement, en augmentant leur capacité à produire des offres de logements très sociaux, en garantissant leur développement financier et en améliorant l'efficacité de leur modèle socio-économique. Solifap est titulaire du label Finansol garantissant la transparence et le caractère solidaire du produit financier qu’elle propose.",
   provider: "Lita",
   amount_needed: 200000,
-  amount_collected: 2300,
+  amount_collected: 70000,
   minimum_investment: 500,
   exit_timing: 4,
   company_type: start_up,
@@ -95,9 +96,10 @@ bioburger = Project.create(
   title: "Bioburger",
   short_description: "Premier fast-food 100/%/ bio qui change tous les codes de la restauration rapide. ",
   long_description: "Fondé en 2011 par deux jeunes entrepreneurs passionnés de culture food, Bioburger a pour ambition de changer les codes du fast-food et surtout promouvoir et démocratiser l’agriculture biologique d’une manière différente grâce à un plat aimé de tous : le hamburger. Bioburger est, depuis sa création, l’unique enseigne de restauration rapide 100% bio spécialisée dans le burger gourmet pour carnivores et végétariens. Défendant des valeurs similaires pour développer et démocratiser l’agriculture biologique, la coopérative Biocoop se rapproche de Bioburger en 2018 et en devient actionnaire minoritaire. Développée en franchise depuis 2017 (1 restaurant à date), l’enseigne Bioburger compte à ce jour 4 restaurants en activité répartis entre Paris et La Défense. Bioburger a pour objectif l’ouverture de 30 restaurants d'ici fin 2022, dont 80% en franchises et le reste en succursales.",
+  impact: "25 jobs créés, 15 000 burgers bio livrés, 16 écoles sensibilisées",
   provider: "Lita",
   amount_needed: 350000,
-  amount_collected: 3500,
+  amount_collected: 80000,
   minimum_investment: 258,
   exit_timing: 2,
   company_type: start_up,
@@ -114,11 +116,12 @@ ProjectCategory.create(project_id: bioburger.id, category_id:alimentation.id)
 
 ecomegot = Project.create(
   title: "ecomegot",
+  impact: "7 millions de mégots collectés, 3650 citoyens sensibi événements de sensisibilisation,200 bornes solidaires installées"
   short_description: "Une solution complète, professionnelle et locale de sensibilisation, collecte et valorisation de mégots de cigarette pour les acteurs privés et publics",
   long_description: "ÉcoMégot propose une solution complète, professionnelle et locale de sensibilisation, collecte et valorisation de mégots de cigarette pour les acteurs privés et publics. Le projet est né au début de l’année 2016, suite à la prise de conscience d’Erwin Faure, son fondateur : aucune solution de dépollution et de recyclage viable des mégots n’existait en France. Inspiré par des initiatives développées à l’étranger, ÉcoMégot a développé une solution innovante mettant en symbiose économie circulaire, emplois locaux et filière de recyclage locale. 100% français, 100% artisanaux et 100% résistants : ÉcoMégot accompagne tous les volontaires, tous secteurs confondus, dans la création de leur propre espace zéro mégot. Le mégot, ce petit déchet polluant tristement fondu dans le paysage urbain, peut devenir une ressource économique et un acteur social. C’est tout le pari lancé par ÉcoMégot !",
   provider: "Lita",
   amount_needed: 200000,
-  amount_collected: 2500,
+  amount_collected: 190000,
   minimum_investment: 100,
   exit_timing: 2,
   company_type: start_up,
@@ -139,7 +142,7 @@ solarbrother = Project.create(
   short_description: "Le spécialiste de la cuisson solaire et de l'allumage solaire démocratise l’expérience et l’utilisation de l’énergie solaire concentré en conjuguant innovation et transfert de connaissances. ",
   long_description: "Charlotte de Vilmorin est en fauteuil depuis toujours. En parallèle de sa carrière dans la publicité, elle crée le blog Wheelcome où elle raconte de façon humoristique ses aventures de jeune parisienne en fauteuil. Très vite le blog fédère une communauté importante dont beaucoup sont dans une situation semblable à celle de Charlotte. Concernée directement par les difficultés qu’elle rencontre lors de ses déplacements, elle décide alors de quitter son poste et de créer Wheeliz pour faciliter la mobilité des personnes en fauteuil. Wheeliz est le premier site collaboratif de location de voitures aménagées pour les personnes en fauteuil roulant. La plateforme comptabilise fin 2018, 8 000 utilisateurs et 870 véhicules aménagés inscrits et référencés.",
   amount_needed: 200000,
-  amount_collected: 2500,
+  amount_collected: 130000,
   minimum_investment: 200,
   exit_timing: 9,
   company_type: start_up,
