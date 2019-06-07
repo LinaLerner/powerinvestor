@@ -1,4 +1,21 @@
-document.querySelector('.invest-btn').addEventListener('click', function() {
+function displayModal() {
   document.querySelector('.franceconnect-modal').classList.remove('d-none');
   document.querySelector('.franceconnect-modal').classList.add('d-flex');
-})
+}
+
+function listenFranceConnectClic() {
+  document.querySelector('.franceconnect-button').addEventListener('click', function() {
+    document.querySelector('.stripe-button-el').click();
+  });
+}
+
+function addStripedata() {
+  const script = document.querySelector('.stripe-button');
+  script.dataset.description = "<%= @order.project.id %>";
+  script.dataset.amount = "<%= @order.amount_cents %>";
+  script.dataset.currency = "<%= @order.amount.currency %>";
+}
+
+addStripedata();
+displayModal();
+listenFranceConnectClic();
