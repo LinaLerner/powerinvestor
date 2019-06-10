@@ -1,5 +1,4 @@
-<div class="franceconnect-modal d-none">
-
+<!-- <div class="franceconnect-modal d-none">
   <div class="modal-content">
     <h2>Votre profil n'est pas complet !</h2>
     <p>Nous avons besoin de certains documents pour pouvoir valider votre investissement. Compléter votre profil en un clic !</p>
@@ -7,7 +6,7 @@
       <input type="button" class="franceconnect-button" value="Complétez le en un clic.">
     </div>
   </div>
-</div>
+</div> -->
 
 <div class="container">
 
@@ -34,7 +33,40 @@
         <h2>Porteur du projet:</h2>
         <p><%= @project.project_manager_profile %></p>
 
-        <p>Type de porteur de projet : <%= @project.company_type.title %></p>
+        <div class="d-flex">
+
+          <div>
+            <canvas id ="radar" width="auto" height="auto"></canvas>
+          </div>
+
+          <div class="d-flex flex-column">
+
+            <div class="d-flex flex-column">
+              <h2>Risque</h2>
+              <p>20%</p>
+            </div>
+
+           <div class="d-flex flex-column">
+              <h2>Rentabilité</h2>
+              <p>20%</p>
+          </div>
+
+        </div>
+
+
+          <div class="d-flex flex-column">
+              <h2>Impact prévu</h2>
+              <div>
+                  <ul>
+                    <% @project.impact.split(",").each do |impact| %>
+                    <li class="card-text">
+                      <%= impact %>
+                    </li>
+                    <% end %>
+                  </ul>
+                </div>
+          </div>
+      </div>
 
       </div>
 
@@ -105,4 +137,6 @@
    <%=  link_to "< Go back", projects_path%>
   </div>
 </div>
-<%= render "payments/stripe_button" %>
+<div class="stripe-button">
+  <%= render "payments/stripe_button" %>
+</div>
