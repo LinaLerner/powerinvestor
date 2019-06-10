@@ -25,37 +25,29 @@
         </div>
 
         <h1><%= @project.title.capitalize %></h1>
-        <h4>Projet proposé par la plateforme <%= @project.provider %></h4>
+        <p>Projet proposé par la plateforme <%= @project.provider %></p>
 
-        <h2>Description</h2>
-        <p><%= @project.long_description %></p>
+        <h3>Description</h3>
+        <p><%= @project.long_description %> <span id="dots">...</span></p>
 
-        <h2>Porteur du projet:</h2>
-        <p><%= @project.project_manager_profile %></p>
-
-        <div class="d-flex">
-
+        <div class="d-flex mt-5 mb-5">
           <div>
             <canvas id ="radar" width="auto" height="auto"></canvas>
           </div>
 
           <div class="d-flex flex-column">
-
-            <div class="d-flex flex-column">
-              <h2>Risque</h2>
-              <p>20%</p>
-            </div>
-
-           <div class="d-flex flex-column">
-              <h2>Rentabilité</h2>
-              <p>20%</p>
+           <div class="d-flex flex-column center">
+            <h3>Risque</h3>
+            <p>20%</p>
+           </div>
+           <div class="d-flex flex-column center">
+            <h3>Rentabilité</h3>
+            <p>20%</p>
           </div>
-
         </div>
 
-
           <div class="d-flex flex-column">
-              <h2>Impact prévu</h2>
+              <h3>Impact prévu</h3>
               <div>
                   <ul>
                     <% @project.impact.split(",").each do |impact| %>
@@ -67,10 +59,35 @@
                 </div>
           </div>
       </div>
+      <button id="myBtn">Voir plus</button>
 
+        <div class="mt-5 mb-5">
+          <span id="more">
+            <h3>Porteur du projet:</h3>
+            <p><%= @project.project_manager_profile %></p>
+            <div class="map"
+              id="map"
+              style="width: 100%;
+              height: 600px;"
+              data-markers="<%= @marker.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+            ></div>
+          </span></p>
+        </div>
       </div>
 
     <div class="project-financial-info-card d-flex flex-column p-2 w-40">
+
+        <div>
+          <h4 id="chart-title">Progrès de la collecte</h4>
+          <div class="center">
+            <p><%= @project.amount_collected %>€ sur les <%= @project.amount_needed %>€ necéssaires</p>
+          </div>
+          <canvas class = "chart" data-progress = "<%= (@project.amount_collected.to_f / @project.amount_needed * 100).round %>"width="auto" height="auto"></canvas>
+          <div class="donut-show">
+            <h5><%= (@project.amount_collected.to_f / @project.amount_needed * 100).round %> %</h5>
+          </div>
+        </div>
 
       <div>
         <div class="d-flex mt-3">
@@ -79,33 +96,14 @@
             <p><%= @project.exit_timing %> mois</p>
           </div>
           <div class="center">
-            <h2>Montant nécessaire</h2>
-            <p><%= @project.amount_needed %>€</p>
-          </div>
-        </div>
-
-        <div>
-          <h4 id="chart-title">Avancement</h4>
-          <canvas class = "chart" data-progress = "<%= (@project.amount_collected.to_f / @project.amount_needed * 100).round %>"width="auto" height="auto"></canvas>
-          <div class="donut-show">
-            <h5><%= (@project.amount_collected.to_f / @project.amount_needed * 100).round %> %</h5>
+            <h2>Durée du financement</h2>
+            <p><%= @project.start_date.strftime('%F') %> - <%= @project.end_date.strftime('%F') %></p>
           </div>
         </div>
 
         <div class="center">
-            <h2>Montant récolté</h2>
-            <p><%= @project.amount_collected %>€</p>
-        </div>
-
-        <div class="d-flex">
-          <div class="center">
-            <h2>Investissement minimum</h2>
-            <p><%= @project.minimum_investment %>€</p>
-          </div>
-          <div class="center">
-            <h2>Durée du financement</h2>
-            <p><%= @project.start_date.strftime('%F') %> - <%= @project.end_date.strftime('%F') %></p>
-          </div>
+          <h2>Investissement minimum</h2>
+          <p><%= @project.minimum_investment %>€</p>
         </div>
       </div>
 
@@ -124,14 +122,6 @@
     </div>
 
   </div>
-
-  <div class="map"
-    id="map"
-    style="width: 100%;
-    height: 600px;"
-    data-markers="<%= @marker.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
 
   <div class="link">
    <%=  link_to "< Go back", projects_path%>

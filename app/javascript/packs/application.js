@@ -17,27 +17,27 @@ if (slider) {
   }
 }
 
-const spinner = document.querySelector(".sk-circle");
-const submit = document.querySelector(".submit");
-
-submit.addEventListener('click', (event) => {
-  event.preventDefault()
-  spinner.classList.remove("d-none");
-  setTimeout((e) => {
-    const form = document.querySelector(".edit_user");
-    form.submit();
-  }, 2000)
-})
+// "voir plus"
 
 
-// document.querySelector('.franceconnect-button').addEventListener('click', function() {
-//   // Make the france connect modal disappear when you click on the france connect button
-//   document.querySelector('.franceconnect-modal').classList.remove('d-flex');
-//   document.querySelector('.franceconnect-modal').classList.add('d-none');
-//   // Simulate the Stripe button to open the stripe modal
-//   document.querySelector('.stripe-payment').click();
-// })
 
+  const button = document.getElementById("myBtn")
+  button.addEventListener('click', (event) => {
+    console.log('kikoo');
+    const dots = document.getElementById("dots");
 
+    const moreText = document.getElementById("more");
+    const btnText = document.getElementById("myBtn");
+
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more";
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less";
+      moreText.style.display = "inline";
+    }
+  });
 
 
