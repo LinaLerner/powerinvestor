@@ -17,6 +17,19 @@ if (slider) {
   }
 }
 
+const spinner = document.querySelector(".sk-circle");
+const submit = document.querySelector(".submit");
+// "voir plus"
+
+submit.addEventListener('click', (event) => {
+  event.preventDefault()
+  spinner.classList.remove("d-none");
+  setTimeout((e) => {
+    const form = document.querySelector(".edit_user");
+    form.submit();
+  }, 2000)
+})
+
 // "voir plus"
 
 

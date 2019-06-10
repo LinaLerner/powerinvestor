@@ -38,10 +38,12 @@
         </div>
     </div>
     <div class="profile">
-        <h2>Votre profil investisseur</h2>
-        <p>Vous avez investi dans <%=  current_user.orders.count%> projets</p>
+        <h4>Votre profil investisseur :</h4>
+        <h5>Super-Power-Energizer-Investor</h5>
+        <%= image_tag "superlenina.png" %>
+        <h5>Vous avez investi dans <%=  current_user.orders.count%> projets</h5>
         <div>
-          <canvas id ="radar" class="radar-investor">
+          <canvas id ="radar" class="radar-investor mb-4">
           </canvas>
           <%= link_to "Investir dans un nouveau projet", step1_path, class:"btn btn-form add-investment" %>
         </div>
