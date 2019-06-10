@@ -29,7 +29,6 @@ submit.addEventListener('click', (event) => {
   }, 2000)
 })
 
-
 // document.querySelector('.franceconnect-button').addEventListener('click', function() {
 //   // Make the france connect modal disappear when you click on the france connect button
 //   document.querySelector('.franceconnect-modal').classList.remove('d-flex');
