@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   def index
     @categories = Category.all
-    @projects = Project.all
+    @projects = Project.all.all.order("rating DESC")
     # @categories.each do |category|
     #   name = category.title
     #   if params[name].present?
