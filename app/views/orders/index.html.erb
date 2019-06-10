@@ -2,6 +2,7 @@
     <% @orders.each do |order| %>
       <div class="row">
           <div class="col-12 mt-3">
+            <%= link_to project_path(order.project), {id:"card-project-link"} do %>
               <div class="card">
                   <div class="card-horizontal">
                       <div class="card-body rounded border-right card-project">
@@ -35,6 +36,7 @@
 
                   </div>
               </div>
+             <% end %>
           </div>
       </div>
     <% end %>
