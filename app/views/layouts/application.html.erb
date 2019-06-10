@@ -25,6 +25,9 @@
       </div>
      <%= render "layouts/footer" %>
   </body>
+
+<!--   DOUGHNUT -->
+
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script>
   Array.from(document.getElementsByClassName('chart')).forEach((chart) => {
@@ -46,14 +49,17 @@
     }});
   });
 
-  radar = document.getElementById('radar')
 
-    var marksData = {
-  labels: ["English", "Maths", "Physics", "Chemistry", "Biology", "History"],
+// RADAR
+
+radar = document.getElementById('radar')
+
+var marksData = {
+  labels: ["Agriculture", "Pauvreté", "Energie", "Egalité", "Envrionnemnt"],
   datasets: [{
-    label: "English",
-    backgroundColor: "rgba(0,0,200,0.2)",
-    data: [54, 65, 60, 70, 70, 75]
+    label: "Catégories d'impact",
+    backgroundColor: "#202135",
+    data: [0, 90, 50, 75, 0]
   }]
 };
 
