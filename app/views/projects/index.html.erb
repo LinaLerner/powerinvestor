@@ -48,6 +48,7 @@
            </div>
           <% end %>
           <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559664386/Remove-card-icon_fqvuj1.png" alt="Remove project" class="cards-picto-exit">
+
           </div>
 
           <div class="cards-header"><h2><%= project.title %></h2>
@@ -55,6 +56,8 @@
 
           <div class="cards-middle"> <%= project.short_description %>
           </div>
+ <div class="cards-matching"> <h2> <%= project.rating %> % pertinences</h2>  </div>
+
          <div class="cards-info">
           <a href=<%= "/projects/#{project.id}"  %>>
             <input type="button" class="cards-button" value="découvrir le projet">
@@ -67,6 +70,7 @@
             <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559665618/euro_hd0zqv.png" alt="amount" class="cards-picto-amount"> <%= project.minimum_investment %>€/min.
           </div>
         </div>
+
         </div>
     <% end %>
     </div>
