@@ -3,12 +3,6 @@
 //   document.querySelector('.franceconnect-modal').classList.add('d-flex');
 // }
 
-function listenInvestClic() {
-  document.querySelector('.invest-btn').addEventListener('click', function() {
-    document.querySelector('.stripe-button-el').click();
-  });
-}
-
 function addStripedata() {
   const script = document.querySelector('.stripe-button');
   script.dataset.description = "<%= @order.project.id %>";
@@ -16,6 +10,7 @@ function addStripedata() {
   script.dataset.currency = "<%= @order.amount.currency %>";
 }
 
+document.querySelector('.stripe-button-el').click();
+
 addStripedata();
-listenInvestClic();
 // displayModal();

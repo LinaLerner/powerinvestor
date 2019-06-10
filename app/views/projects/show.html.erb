@@ -12,7 +12,7 @@
 
   <div class="d-flex flex-column">
 
-    <div class="project-card-container d-flex mt-5 justify-content-around">
+    <div class="project-card-container d-flex mt-3 justify-content-around">
 
       <div class="project-description-card p-2 w-40">
 
@@ -27,10 +27,7 @@
         <h1><%= @project.title.capitalize %></h1>
         <p>Projet proposé par la plateforme <%= @project.provider %></p>
 
-        <h3>Description</h3>
-        <p><%= @project.long_description %> <span id="dots">...</span></p>
-
-        <div class="d-flex mt-5 mb-5">
+        <div class="d-flex m-5 center">
           <div>
             <canvas id ="radar" width="auto" height="auto"></canvas>
           </div>
@@ -58,8 +55,10 @@
                   </ul>
                 </div>
           </div>
-      </div>
-      <button id="myBtn">Voir plus</button>
+        </div>
+
+        <h3>Description</h3>
+        <p><%= @project.long_description %> <span id="dots">...</span></p>
 
         <div class="mt-5 mb-5">
           <span id="more">
@@ -73,6 +72,8 @@
               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
             ></div>
           </span></p>
+        <button id="myBtn">Voir plus</button>
+
         </div>
       </div>
 
@@ -107,14 +108,14 @@
         </div>
       </div>
 
-      <div class="d-flex flex-column invest-form">
+      <div class="d-flex flex-column invest-form mt-5">
         <div>
           <%= form_tag orders_path, remote: true do %>
           <%= hidden_field_tag 'project_id', @project.id %>
           <%= number_field_tag 'amount_cents'%>
         </div>
         <div>
-          <%= submit_tag 'Investir maintenant !', class: 'invest-btn' %>
+          <%= submit_tag 'Investir maintenant !', class: 'invest-btn btn-form' %>
           <% end %>
         </div>
       </div>

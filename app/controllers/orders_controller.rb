@@ -6,7 +6,6 @@ class OrdersController < ApplicationController
       format.html { redirect_to new_order_payment_path(@order) }
       format.js  # <-- will render `app/views/reviews/create.js.erb`
     end
-
   end
 
   def index
