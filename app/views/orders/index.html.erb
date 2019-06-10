@@ -1,43 +1,44 @@
 <div class="container">
-    <% @orders.each do |order| %>
-      <div class="row">
-          <div class="col-12 mt-3">
-            <%= link_to project_path(order.project), {id:"card-project-link"} do %>
-              <div class="card">
-                  <div class="card-horizontal">
-                      <div class="card-body rounded border-right card-project">
-                          <h4 class="card-title">
-                            <%= order.project.title %>
-                          </h4>
-                          <p>
-                            Société d’investissements solidaires de la fondation Abbé Pierre qui utilise l’épargne citoyenne comme une réponse concrète à la lutte contre le mal-logement.
-                          </p>
-                      </div>
-                      <div class="card-body border-right">
-                          <h4 class="card-title">Impact</h4>
-                          <ul>
-                            <% order.project.impact.split(",").each do |impact| %>
-                            <li class="card-text">
-                              <%= impact %>
-                            </li>
-                            <% end %>
-                          </ul>
-                      </div>
-                        <div>
-                          <h4 id="chart-title">Progress</h4>
-                          <canvas class = "chart" data-progress = "<%= (order.project.amount_collected.to_f / order.project.amount_needed * 100).round %>"width="auto" height="auto">
-                          </canvas>
-                          <div class="donut-inner">
-                            <h5>
-                              <%= (order.project.amount_collected.to_f / order.project.amount_needed * 100).round %> %
-                            </h5>
-                          </div>
+  <div class="dashboard d-flex">
+    <div class="projects">
+      <section class=" ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <nav class="nav-justified my-3">
+                        <div class="nav nav-tabs " id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="pop1-tab" data-toggle="tab" href="#pop1" role="tab" aria-controls="pop1" aria-selected="true">En cours de collecte</a>
+                            <a class="nav-item nav-link" id="pop2-tab" data-toggle="tab" href="#pop2" role="tab" aria-controls="pop2" aria-selected="false">Financé</a>
                         </div>
-
-                  </div>
-              </div>
-             <% end %>
-          </div>
-      </div>
-    <% end %>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="pop1" role="tabpanel" aria-labelledby="pop1-tab">
+                            <div class="pt-3">
+                              <%= render partial: "cards_projects", locals: {orders: @orders_in_progress} %>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pop2" role="tabpanel" aria-labelledby="pop2-tab">
+                            <div class="pt-3">
+                              <%= render partial: "cards_projects", locals: {orders: @orders_finished} %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <div class="profile">
+      <div class="profile-title">
+        <h2>Votre profil investisseur</h2>
+      </div>
+      <div class="profile-infos">
+        Vous avez investi dans <%=  current_user.orders.count%> projets
+        <div>
+          <canvas id ="radar" class="radar-investor">
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+    </section>

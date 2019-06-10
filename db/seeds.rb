@@ -87,7 +87,7 @@ solifap = Project.create(
   short_description: "Société d’investissements solidaires de la fondation Abbé Pierre qui utilise l’épargne citoyenne comme une réponse concrète à la lutte contre le mal-logement. ",
   long_description: "Parce que bénéficier d'un logement c'est reconstruire une vie, Solifap est une société d'investissements solidaires qui soutient les associations luttant contre le mal-logement. Plus de 60 ans après « l’appel à l'insurrection de la bonté » de l’Abbé Pierre, la situation du mal-logement en France reste encore une préoccupation majeure pour 12 millions de français. La Fondation Abbé Pierre, qui a pour mission de permettre à toute personne démunie d'accéder à un logement décent et à une vie digne, décide ainsi de créer Solifap en 2014 pour déployer des moyens additionnels pour lutter contre le mal-logement, en s’appuyant sur l’épargne citoyenne. Solifap permet à l’épargne des citoyens de devenir un levier d’action direct afin de soutenir les associations qui luttent contre le mal logement, en augmentant leur capacité à produire des offres de logements très sociaux, en garantissant leur développement financier et en améliorant l'efficacité de leur modèle socio-économique. Solifap est titulaire du label Finansol garantissant la transparence et le caractère solidaire du produit financier qu’elle propose.",
   provider: "Lita",
-  amount_needed: 200000,
+  amount_needed: 70000,
   amount_collected: 70000,
   minimum_investment: 500,
   exit_timing: 4,
@@ -101,8 +101,9 @@ solifap = Project.create(
   project_url: "https://fr.lita.co/fr/projects/681-solifap",
   rating: 87
   )
-ProjectCategory.create(project: solifap, category:pauvrete)
-ProjectCategory.create(project: solifap, category:egalite)
+ProjectCategory.create(project_id: solifap.id, category:pauvrete)
+ProjectCategory.create(project_id: solifap.id, category:egalite)
+Order.create(project: solifap, user: merwane)
 bioburger = Project.create(
   title: "Bioburger",
   short_description: "Premier fast-food 100/%/ bio qui change tous les codes de la restauration rapide. ",
