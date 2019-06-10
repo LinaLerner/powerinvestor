@@ -45,6 +45,23 @@
       }
     }});
   });
+
+  radar = document.getElementById('radar')
+
+    var marksData = {
+  labels: ["English", "Maths", "Physics", "Chemistry", "Biology", "History"],
+  datasets: [{
+    label: "English",
+    backgroundColor: "rgba(0,0,200,0.2)",
+    data: [54, 65, 60, 70, 70, 75]
+  }]
+};
+
+var radarChart = new Chart(radar, {
+  type: 'radar',
+  data: marksData
+});
+
   </script>
 </html>
 
