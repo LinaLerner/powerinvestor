@@ -11,7 +11,7 @@
   %>
   <div class="categories"> <br><br>Category</div>
   <% @categories.each do |category| %>
-    <input type="checkbox" id="<%= category.title %>" name="category[]" value="<%= category.title %>">
+    <input class = "project-category" type="checkbox" id="<%= category.title %>" name="category[]" value="<%= category.title %>">
     <label for="<%= category.title %>"><%= category.title %></label>
   <% end %>
 
@@ -25,7 +25,7 @@
  <!--  <input type="text" name="location" placeholder="location">
   <input type="text" name="invest" placeholder="invest">
   <input type="text" name="company_type" placeholder="company_type"> -->
-  <input type="submit">
+  <input type="submit" class = "button-categories" style="display: none;">
 
 <% end %>
 <!-- the list of movies -->

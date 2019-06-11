@@ -1,7 +1,6 @@
 import Chart from 'chart.js';
 
 const initChart = () => {
-    console.log('Kikou');
     const myChart = document.getElementsByClassName('chart');
     if (myChart) {
       Array.from(myChart).forEach((chart) => {
