@@ -6,9 +6,11 @@ import { manageSlider } from "../plugins/slider";
 import { seeMore } from "../plugins/seeMore";
 import { manageSpinner } from "../plugins/spinner";
 import { initChart } from "../plugins/chart";
+import { manageRadio } from "../plugins/radio";
 
 initMapbox();
 manageCheckbox();
+manageRadio();
 manageSlider();
 manageSpinner();
 seeMore();
