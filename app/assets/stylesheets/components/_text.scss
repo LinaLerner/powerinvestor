@@ -17,9 +17,44 @@
   text-align:center;
 }
 
- #more {
+#more {
   display: none;
 }
 
 #dots {
+}
+
+.legend {
+  color: $gray;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.tag-show {
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  background-color: antiquewhite;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  margin-top: 5px;
+  text-align: right;
+  border-radius: 50px;
+}
+
+.underline {
+  width:70px;
+  height: 5px;
+  background-image: linear-gradient(to right, $specific-background, $specific-background);
+  margin-bottom: 20px;
+}
+
+.title-recap {
+  font-weight: bold;
+  margin-bottom: 2px;
+  margin-top:5px;
 }
