@@ -7,12 +7,6 @@ const manageRadio = () => {
       choices.forEach((c) => {c.classList.remove("active")});
       console.log(event.currentTarget);
       event.currentTarget.classList.add("active")
-      // if (checkActive === null) {
-      //   event.currentTarget.classList.add("active")
-      // } else {
-      //   checkActive.classList.remove("active")
-      //   event.currentTarget.classList.add("active")
-      // }
     });
   });
 };
