@@ -1,0 +1,30 @@
+<div class="body-form">
+  <div class="container">
+    <h3 class="mb-4">Dites nous combien</h3>
+    <div class="investment mt-5">
+      <%= simple_form_for([@user], :url => registration_path(@user), :method => :patch) do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :maximum_investment, as: :range, :input_html => { :min => '100' }, :input_html => { :max => '10 000' }, :input_html => { :class => 'slider' }, label_html: { class: 'd-none' } %>
+        <p>Investissement max: <span id="demo"></span></p>
+    </div>
+      <div class="form-actions">
+        <%= f.input :step, as: :hidden, :input_html => { :value => 'step4' } %>
+        <%= f.button :submit, "Impressionnez moi!", class:"btn btn-form submit" %>
+        <div class="sk-circle d-none">
+          <div class="sk-circle1 sk-child"></div>
+          <div class="sk-circle2 sk-child"></div>
+          <div class="sk-circle3 sk-child"></div>
+          <div class="sk-circle4 sk-child"></div>
+          <div class="sk-circle5 sk-child"></div>
+          <div class="sk-circle6 sk-child"></div>
+          <div class="sk-circle7 sk-child"></div>
+          <div class="sk-circle8 sk-child"></div>
+          <div class="sk-circle9 sk-child"></div>
+          <div class="sk-circle10 sk-child"></div>
+          <div class="sk-circle11 sk-child"></div>
+          <div class="sk-circle12 sk-child"></div>
+        </div>
+      <% end %>
+      </div>
+  </div>
+</div>

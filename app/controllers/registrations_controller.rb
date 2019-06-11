@@ -29,6 +29,9 @@ class RegistrationsController < Devise::RegistrationsController
       companies.each do |company|
         UserCompanyType.create(user: @user, company_type: CompanyType.find(company))
       end
+      @user.save
+      redirect_to step4_path
+    when "step4"
       @user.maximum_investment = params[:user][:maximum_investment]
       @user.save
       redirect_to projects_path
