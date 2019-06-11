@@ -1,0 +1,7 @@
+console.log("ok");
+function refreshCards(innerHTML) {
+  const cards = document.querySelector('.cards-grid');
+  cards.innerHTML = innerHTML;
+}
+
+refreshCards('<%= j render "cards", projects: @projects %>');
