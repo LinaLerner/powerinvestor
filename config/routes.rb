@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'step1', to: "wizards#step1", as: :step1
   get 'step2', to: "wizards#step2", as: :step2
   get 'step3', to: "wizards#step3", as: :step3
+  get 'step4', to: "wizards#step4", as: :step4
 
   resources :orders, only: [:create] do
     resources :payments, only: [:new, :create]

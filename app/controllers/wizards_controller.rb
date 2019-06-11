@@ -13,6 +13,9 @@ class WizardsController < ApplicationController
     @company_types = CompanyType.all
   end
 
+  def step4
+  end
+
   private
 
   def find_user

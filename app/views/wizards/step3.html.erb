@@ -1,11 +1,9 @@
 <div class="body-form">
   <div class="container">
-    <div class="row d-flex justify-content-between ">
-      <div class="img-form-step3 d-flex">
-        <%= image_tag "step3.png" %>
-      </div>
+    <div class="row d-flex justify-content-around ">
       <div class="edit-form">
-        <h2 class="m-4 mb-4">Vous êtes plutôt quel type de porteur de projet?</h2>
+        <h5 class="m-4 mb-4">Vous êtes plutôt quel type de porteur de projet?</h5>
+        <%= image_tag "step3.png" %>
         <%= simple_form_for([@user], :url => registration_path(@user), :method => :patch) do |f| %>
           <%= f.error_notification %>
           <legend class="col-form-label pt-0"></legend>
@@ -17,29 +15,6 @@
                 <label class="collection_check_boxes" for="user_company_type_ids_<%= company_type.id %>"><%= company_type.title %></label>
               </div>
             <% end %>
-          <div class="investment mt-5">
-            <h3 class="mb-4">Dites nous combien</h3>
-            <%= f.input :maximum_investment, as: :range, :input_html => { :min => '100' }, :input_html => { :max => '10 000' }, :input_html => { :class => 'slider' }, label_html: { class: 'd-none' } %>
-            <p>Investissement max: <span id="demo"></span></p>
-          </div>
-          <div class="form-actions">
-          <%= f.input :step, as: :hidden, :input_html => { :value => 'step3' } %>
-          <%= f.button :submit, "Impressionnez moi!", class:"btn btn-form submit" %>
-          <div class="sk-circle d-none">
-            <div class="sk-circle1 sk-child"></div>
-            <div class="sk-circle2 sk-child"></div>
-            <div class="sk-circle3 sk-child"></div>
-            <div class="sk-circle4 sk-child"></div>
-            <div class="sk-circle5 sk-child"></div>
-            <div class="sk-circle6 sk-child"></div>
-            <div class="sk-circle7 sk-child"></div>
-            <div class="sk-circle8 sk-child"></div>
-            <div class="sk-circle9 sk-child"></div>
-            <div class="sk-circle10 sk-child"></div>
-            <div class="sk-circle11 sk-child"></div>
-            <div class="sk-circle12 sk-child"></div>
-          </div>
-          </div>
         </div>
       <% end %>
     </div>
