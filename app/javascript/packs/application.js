@@ -7,6 +7,7 @@ import { seeMore } from "../plugins/seeMore";
 import { manageSpinner } from "../plugins/spinner";
 import { initChart } from "../plugins/chart";
 import { manageRadio } from "../plugins/radio";
+import { initFilter } from "../plugins/init_filter";
 
 initMapbox();
 manageCheckbox();
@@ -15,5 +16,6 @@ manageSlider();
 manageSpinner();
 seeMore();
 initChart();
+initFilter();
 
 

@@ -58,23 +58,15 @@
 
         <h3>Description</h3>
         <div class="underline"></div>
-        <p><%= @project.long_description %> <span id="dots">...</span></p>
+        <p id="description"><%= @project.long_description %> <span id="dots">...</span></p>
 
-        <div class="mt-5 mb-5">
+        <div class="mb-5">
           <span id="more">
             <h3>Porteur du projet:</h3>
             <div class="underline"></div>
             <p><%= @project.project_manager_profile %></p>
-            <div class="map"
-              id="map"
-              style="width: 100%;
-              height: 600px;"
-              data-markers="<%= @marker.to_json %>"
-              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-            ></div>
           </span></p>
-        <button id="myBtn">Voir plus</button>
-
+        <button id="myBtn"><i class="fas fa-chevron-circle-down"></i></button>
         </div>
       </div>
 
@@ -105,25 +97,26 @@
             <p><%= @project.end_date.strftime('%F')%></p>
           </div>
         </div>
-
-        <div class="center">
-          <h2>Investissement minimum</h2>
-          <p><%= @project.minimum_investment %>€</p>
-        </div>
       </div>
 
-      <div class="d-flex flex-column invest-form mt-5">
-        <div class="invest-form-input">
-          <%= form_tag orders_path do %>
-          <%= hidden_field_tag 'project_id', @project.id %>
-          <%= number_field_tag 'amount_cents' %>
-        </div>
-        <div>
-          <%= submit_tag 'Investir !', class: 'invest-btn btn-form' %>
-          <% end %>
+      <div class="d-flex flex-column justify-content-center mt-5">
+          <div class="center">
+            <h2>Investissement minimum</h2>
+            <p><%= @project.minimum_investment %>€</p>
+          </div>
+
+          <div class="d-flex invest-form justify-content-center">
+          <div>
+            <%= form_tag orders_path do %>
+            <%= hidden_field_tag 'project_id', @project.id %>
+            <%= number_field_tag 'amount_cents', nil, class: 'invest-form-input'%>
+          </div>
+          <div>
+            <%= submit_tag 'Investir !', class: 'invest-btn' %>
+            <% end %>
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 
