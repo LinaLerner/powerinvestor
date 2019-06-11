@@ -3,7 +3,7 @@
  <div class="container">
 
   <!-- [...] -->
-<%= form_tag projects_path, method: :get do  %>
+<%= form_tag projects_path, method: :get, remote: true do  %>
   <%#= text_field_tag :query,
     params[:query],
     class: "form-control",
@@ -38,42 +38,7 @@
 
 <div class="container">
 
-  <div class="cards-grid">
-    <% @projects.each do |project| %>
-      <div class="cards">
-        <div class="cards-top">
-          <% project.categories.to_a.each do |category| %>
-           <div class="cards-tag">
-             <%= category.title %>
-           </div>
-          <% end %>
-          <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559664386/Remove-card-icon_fqvuj1.png" alt="Remove project" class="cards-picto-exit">
-
-          </div>
-
-          <div class="cards-header"><h2><%= project.title %></h2>
-          </div>
-
-          <div class="cards-middle"> <%= project.short_description %>
-          </div>
- <div class="cards-matching"> <h2> <%= project.rating %> % pertinences</h2>  </div>
-
-         <div class="cards-info">
-          <a href=<%= "/projects/#{project.id}"  %>>
-            <input type="button" class="cards-button" value="découvrir le projet">
-          </a>
-
-         </div>
-        <div class="cards-footer">
-          <div class="cards-picto-box">
-            <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559665618/battery-low_hdtxf5.png" alt="progression" class="cards-picto-status"> <%= (project.amount_collected.to_f / project.amount_needed * 100 ).round %>%
-            <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559665618/euro_hd0zqv.png" alt="amount" class="cards-picto-amount"> <%= project.minimum_investment %>€/min.
-          </div>
-        </div>
-
-        </div>
-    <% end %>
-    </div>
+  <%= render partial: "cards", locals: {projects: @projects} %>
 </div>
 
 

@@ -21,10 +21,15 @@ class ProjectsController < ApplicationController
         @projects.category_search(cat)
       end
       @projects = pro.flatten
+
     end
     # if params[:invest_type].present?
     #   @projects = Project.invest_search(params[:invest])
     # end
+    respond_to do |format|
+        format.html { render 'index' }
+        format.js  # <-- idem
+    end
     @categories = Category.all
     @project_categories = ProjectCategory.all
   end
