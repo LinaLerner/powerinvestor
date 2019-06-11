@@ -1,15 +1,16 @@
 const manageSpinner = () => {
-  const form = document.querySelector(".edit_user");
-  if ( form ) {
-    const spinner = document.querySelector(".sk-circle");
-    form.addEventListener('submit', (event) => {
+  const button = document.querySelector("input.submit")
+  const form = document.querySelector(".simple_form.edit_user");
+  const spinner = document.querySelector(".sk-circle");
+  if ( spinner ) {
+    button.addEventListener('click', (event) => {
       event.preventDefault()
       spinner.classList.remove("d-none");
-      setTimeout((e) => {
+      button.classList.add("d-none");
+      setTimeout(() => {
         form.submit();
       }, 2000)
     });
-
   }
 }
 
