@@ -1,7 +1,4 @@
 <!-- app/views/payments/new.html.erb -->
-<h3 class="container my-6">
-  Paiement en cours...
-</h3>
 <div style="display:none;">
 
 <h1>Purchase of teddy </h1>
@@ -15,9 +12,9 @@
   # Commented for the lecture, remove comments.
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-name="My Teddy"
+    data-name="Mon investissement"
     data-email="<%= current_user.email %>"
-    data-description="Teddy"
+    data-description="Mon investissement"
     data-amount="<%= @order.amount_cents %>"
     data-currency="<%= @order.amount.currency %>"></script>
 <% end %>
