@@ -129,7 +129,7 @@ ProjectCategory.create(project_id: bioburger.id, category:agriculture)
 ProjectCategory.create(project_id: bioburger.id, category:sante)
 Order.create(project: bioburger, user: merwane)
 ecomegot = Project.create(
-  title: "ecomegot",
+  title: "Ecomegot",
   impact: "7 millions de mégots collectés, 3650 citoyens sensibi événements de sensisibilisation,200 bornes solidaires installées",
   short_description: "Une solution complète, professionnelle et locale de sensibilisation, collecte et valorisation de mégots de cigarette pour les acteurs privés et publics",
   long_description: "ÉcoMégot propose une solution complète, professionnelle et locale de sensibilisation, collecte et valorisation de mégots de cigarette pour les acteurs privés et publics. Le projet est né au début de l’année 2016, suite à la prise de conscience d’Erwin Faure, son fondateur : aucune solution de dépollution et de recyclage viable des mégots n’existait en France. Inspiré par des initiatives développées à l’étranger, ÉcoMégot a développé une solution innovante mettant en symbiose économie circulaire, emplois locaux et filière de recyclage locale. 100% français, 100% artisanaux et 100% résistants : ÉcoMégot accompagne tous les volontaires, tous secteurs confondus, dans la création de leur propre espace zéro mégot. Le mégot, ce petit déchet polluant tristement fondu dans le paysage urbain, peut devenir une ressource économique et un acteur social. C’est tout le pari lancé par ÉcoMégot !",
@@ -154,7 +154,7 @@ ProjectCategory.create(project_id: ecomegot.id, category:sante)
 Order.create(project: ecomegot, user: merwane)
 
 solarbrother = Project.create(
-  title: "solar brother",
+  title: "Solar Brother",
   provider: "Lita",
   short_description: "Le spécialiste de la cuisson solaire et de l'allumage solaire démocratise l’expérience et l’utilisation de l’énergie solaire concentré en conjuguant innovation et transfert de connaissances. ",
   long_description: "Charlotte de Vilmorin est en fauteuil depuis toujours. En parallèle de sa carrière dans la publicité, elle crée le blog Wheelcome où elle raconte de façon humoristique ses aventures de jeune parisienne en fauteuil. Très vite le blog fédère une communauté importante dont beaucoup sont dans une situation semblable à celle de Charlotte. Concernée directement par les difficultés qu’elle rencontre lors de ses déplacements, elle décide alors de quitter son poste et de créer Wheeliz pour faciliter la mobilité des personnes en fauteuil. Wheeliz est le premier site collaboratif de location de voitures aménagées pour les personnes en fauteuil roulant. La plateforme comptabilise fin 2018, 8 000 utilisateurs et 870 véhicules aménagés inscrits et référencés.",
@@ -311,7 +311,7 @@ ProjectCategory.create(project_id: can.id, category_id:agriculture.id)
 
 
 chris = Project.create(
-  title: "chris",
+  title: "Chris",
   short_description: "Son projet actuel est de réaliser des interviews de différentes personnalités de cette communauté et de proposer son reportage à des chaines de télévisions nigérianes. Il souhaite montrer aux Nigérians les différences et les similitudes entre la vie au Nigéria et la vie en Belgique. Il sollicite un microcrédit afin de louer l'équippement nécessaire à la réalisation de son reportage. ",
   long_description: "Son projet actuel est de réaliser des interviews de différentes personnalités de cette communauté et de proposer son reportage à des chaines de télévisions nigérianes. Il souhaite montrer aux Nigérians les différences et les similitudes entre la vie au Nigéria et la vie en Belgique. Il sollicite un microcrédit afin de louer l'équippement nécessaire à la réalisation de son reportage.",
   provider: "Babyloan",
