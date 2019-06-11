@@ -36,6 +36,7 @@ class ProjectsController < ApplicationController
         lat: @project.latitude,
         lng: @project.longitude
        }
+       @order =Order.create
   end
 end
 

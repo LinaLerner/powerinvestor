@@ -1,4 +1,7 @@
-<div class="stripe-payment">
+<!-- app/views/payments/new.html.erb -->
+<div style="display:none;">
+
+<h1>Purchase of teddy </h1>
 <%= form_tag order_payments_path(@order) do %>
   <article>
     <label class="amount">
@@ -6,13 +9,17 @@
     </label>
   </article>
 
+  # Commented for the lecture, remove comments.
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
     data-name="Mon investissement"
     data-email="<%= current_user.email %>"
-    data-description="Teddy <%= @order.project.id %>"
+    data-description="Mon investissement"
     data-amount="<%= @order.amount_cents %>"
     data-currency="<%= @order.amount.currency %>"></script>
 <% end %>
 </div>
+<script>
+      document.querySelector(".stripe-button-el").click();
 
+</script>
