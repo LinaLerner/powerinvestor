@@ -27,9 +27,9 @@
                             <canvas class="chart" data-progress="<%= (order.project.amount_collected.to_f / order.project.amount_needed * 100).round %>" width="auto" height="auto">
                             </canvas>
                             <div class="donut-inner">
-                                <h5>
+                                <h6>
                               <%= (order.project.amount_collected.to_f / order.project.amount_needed * 100).round %> %
-                            </h5>
+                            </h6>
                             </div>
                         </div>
 
