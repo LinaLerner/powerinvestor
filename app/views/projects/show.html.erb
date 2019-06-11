@@ -16,53 +16,54 @@
 
       <div class="project-description-card p-2 w-40">
 
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-between">
+          <div>
+            <h1><%= @project.title.capitalize %></h1>
+            <div class="underline"></div>
+          </div>
+          <div class="rating-show"><%= @project.rating %>% de pertinence</div>
+        </div>
+        <div class="legend">Projet proposé par la plateforme <%= @project.provider %>
+        </div>
+        <div class="d-flex justify-content-start">
           <% @project.categories.to_a.each do |category| %>
-           <div class="project-card-tag mr-3">
+           <div class="tag-show mr-3">
              <%= category.title %>
            </div>
           <% end %>
         </div>
 
-        <h1><%= @project.title.capitalize %></h1>
-        <p>Projet proposé par la plateforme <%= @project.provider %></p>
+        <div class="d-flex mt-5">
 
-        <div class="d-flex m-5 center">
-          <div>
-            <canvas id ="radar" width="auto" height="auto"></canvas>
-          </div>
+            <div class="radar-show">
+              <canvas id ="radar" width="auto" height="auto"></canvas>
+            </div>
 
-          <div class="d-flex flex-column">
-           <div class="d-flex flex-column center">
-            <h3>Risque</h3>
-            <p>20%</p>
-           </div>
-           <div class="d-flex flex-column center">
-            <h3>Rentabilité</h3>
-            <p>20%</p>
-          </div>
-        </div>
+            <div>
+              <p class="title-recap ">Risque</p>
+              <p>20%</p>
+              <p class="title-recap"> Rentabilité</p>
+              <p>20%</p>
+              <p class="title-recap">  Impact prévu</p>
+                <ul>
+                  <% @project.impact.split(",").each do |impact| %>
+                  <li class="card-text">
+                    <%= impact %>
+                  </li>
+                  <% end %>
+                </ul>
+            </div>
 
-          <div class="d-flex flex-column">
-              <h3>Impact prévu</h3>
-              <div>
-                  <ul>
-                    <% @project.impact.split(",").each do |impact| %>
-                    <li class="card-text">
-                      <%= impact %>
-                    </li>
-                    <% end %>
-                  </ul>
-                </div>
-          </div>
         </div>
 
         <h3>Description</h3>
+        <div class="underline"></div>
         <p><%= @project.long_description %> <span id="dots">...</span></p>
 
         <div class="mt-5 mb-5">
           <span id="more">
             <h3>Porteur du projet:</h3>
+            <div class="underline"></div>
             <p><%= @project.project_manager_profile %></p>
             <div class="map"
               id="map"
@@ -79,16 +80,19 @@
 
     <div class="project-financial-info-card d-flex flex-column p-2 w-40">
 
-        <div>
+      <div>
+        <div class="d-flex flex-column">
           <h4 id="chart-title">Progrès de la collecte</h4>
-          <div class="center">
-            <p><%= @project.amount_collected %>€ sur les <%= @project.amount_needed %>€ necéssaires</p>
-          </div>
-          <canvas class = "chart" data-progress = "<%= (@project.amount_collected.to_f / @project.amount_needed * 100).round %>"width="auto" height="auto"></canvas>
-          <div class="donut-show">
-            <h5><%= (@project.amount_collected.to_f / @project.amount_needed * 100).round %> %</h5>
-          </div>
+          <div class="underline"></div>
         </div>
+        <div class="center">
+          <p><%= @project.amount_collected %>€ sur les <%= @project.amount_needed %>€ necéssaires</p>
+        </div>
+        <canvas class = "chart" data-progress = "<%= (@project.amount_collected.to_f / @project.amount_needed * 100).round %>"width="auto" height="auto"></canvas>
+        <div class="donut-show">
+          <h5><%= (@project.amount_collected.to_f / @project.amount_needed * 100).round %> %</h5>
+        </div>
+      </div>
 
       <div>
         <div class="d-flex mt-3">
@@ -97,8 +101,8 @@
             <p><%= @project.exit_timing %> mois</p>
           </div>
           <div class="center">
-            <h2>Durée du financement</h2>
-            <p><%= @project.start_date.strftime('%F') %> - <%= @project.end_date.strftime('%F') %></p>
+            <h2>Fin du financement</h2>
+            <p><%= @project.end_date.strftime('%F')%></p>
           </div>
         </div>
 
@@ -109,25 +113,25 @@
       </div>
 
       <div class="d-flex flex-column invest-form mt-5">
-        <div>
+        <div class="invest-form-input">
           <%= form_tag orders_path, remote: true do %>
           <%= hidden_field_tag 'project_id', @project.id %>
-          <%= number_field_tag 'amount_cents'%>
+          <%= number_field_tag 'amount_cents' %>
         </div>
         <div>
-          <%= submit_tag 'Investir maintenant !', class: 'invest-btn btn-form' %>
+          <%= submit_tag 'Investir !', class: 'invest-btn btn-form' %>
           <% end %>
         </div>
       </div>
 
     </div>
-
   </div>
 
   <div class="link">
    <%=  link_to "< Go back", projects_path%>
   </div>
 </div>
+
 <div class="stripe-button">
   <%= render "payments/stripe_button" %>
 </div>
