@@ -11,12 +11,14 @@
         <%= simple_form_for([@user], :url => registration_path(@user), :method => :patch) do |f| %>
         <%= f.error_notification %>
         <legend class="col-form-label pt-0"></legend>
-        <div class="form-group check_boxes optional user_locations category-choices">
+        <div class="form-group check_boxes optional user_locations category-choices grid-3">
           <input type="hidden" name="user[location_ids][]" value="" />
           <% @locations.each do |location| %>
-            <div class="form-check category-chosen category-chosen-step2">
-              <input class="form-check-input check_boxes optional d-none"  type="checkbox" value="<%= location.id %>" name="user[location_ids][]" id="user_location_ids_<%= location.id %>" />
-              <label class="collection_check_boxes" for="user_location_ids_<%= location.id %>"><%= location.title %></label>
+            <div class="category-chosen-wrapper step2">
+              <div class="form-check category-chosen category-chosen-step2">
+                <input class="form-check-input check_boxes optional d-none"  type="checkbox" value="<%= location.id %>" name="user[location_ids][]" id="user_location_ids_<%= location.id %>" />
+                <label class="collection_check_boxes" for="user_location_ids_<%= location.id %>"><%= location.title %></label>
+              </div>
             </div>
             <% end %>
           <%= f.input :step, as: :hidden, :input_html => { :value => 'step2' } %>
