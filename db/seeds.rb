@@ -74,10 +74,12 @@ asie.save
 oceanie = Location.new(title: "Océanie")
 oceanie.save
 # User : Merwane
-merwane = User.new
-merwane.email = "merwanehamadi@gmail.com"
-merwane.password = "powerinvestor"
-merwane.save
+elina = User.new
+elina.email = "elina@lewagon.com"
+elina.password = "powerinvestor"
+elina.first_name = "Elina"
+elina.last_name = "Lerner"
+elina.save
 
 # PROJECTS : Lita
 
@@ -103,7 +105,7 @@ solifap = Project.create(
   )
 ProjectCategory.create(project_id: solifap.id, category:alimentation)
 ProjectCategory.create(project_id: solifap.id, category:egalite)
-Order.create(project: solifap, user: merwane)
+Order.create(project: solifap, user: elina)
 bioburger = Project.create(
   title: "Bioburger",
   short_description: "Premier fast-food 100% bio qui change tous les codes de la restauration rapide. ",
@@ -127,7 +129,6 @@ bioburger = Project.create(
 ProjectCategory.create(project_id: bioburger.id, category:alimentation)
 ProjectCategory.create(project_id: bioburger.id, category:agriculture)
 ProjectCategory.create(project_id: bioburger.id, category:sante)
-Order.create(project: bioburger, user: merwane)
 ecomegot = Project.create(
   title: "Ecomegot",
   impact: "7 millions de mégots collectés, 3650 citoyens sensibi événements de sensisibilisation,200 bornes solidaires installées",
@@ -151,7 +152,7 @@ ecomegot = Project.create(
 ProjectCategory.create(project_id: ecomegot.id, category:education)
 ProjectCategory.create(project_id: ecomegot.id, category:agriculture)
 ProjectCategory.create(project_id: ecomegot.id, category:sante)
-Order.create(project: ecomegot, user: merwane)
+Order.create(project: ecomegot, user: elina)
 
 solarbrother = Project.create(
   title: "Solar Brother",
