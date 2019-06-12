@@ -106,7 +106,7 @@ ProjectCategory.create(project_id: solifap.id, category:egalite)
 Order.create(project: solifap, user: merwane)
 bioburger = Project.create(
   title: "Bioburger",
-  short_description: "Premier fast-food 100/%/ bio qui change tous les codes de la restauration rapide. ",
+  short_description: "Premier fast-food 100% bio qui change tous les codes de la restauration rapide. ",
   long_description: "Fondé en 2011 par deux jeunes entrepreneurs passionnés de culture food, Bioburger a pour ambition de changer les codes du fast-food et surtout promouvoir et démocratiser l’agriculture biologique d’une manière différente grâce à un plat aimé de tous : le hamburger. Bioburger est, depuis sa création, l’unique enseigne de restauration rapide 100% bio spécialisée dans le burger gourmet pour carnivores et végétariens. Défendant des valeurs similaires pour développer et démocratiser l’agriculture biologique, la coopérative Biocoop se rapproche de Bioburger en 2018 et en devient actionnaire minoritaire. Développée en franchise depuis 2017 (1 restaurant à date), l’enseigne Bioburger compte à ce jour 4 restaurants en activité répartis entre Paris et La Défense. Bioburger a pour objectif l’ouverture de 30 restaurants d'ici fin 2022, dont 80% en franchises et le reste en succursales.",
   impact: "25 jobs créés, 15 000 burgers bio livrés, 16 écoles sensibilisées",
   provider: "Lita",

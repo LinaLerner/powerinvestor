@@ -280,6 +280,7 @@ margin-top: -41px;
 #chart-title{
     text-align: center;
     margin-top: 15px;
+    font-size: 18px;
 
 }
 
@@ -324,4 +325,32 @@ margin-top: -41px;
     border-bottom: solid 3px;
     border-color: #DCE3FD;
   }
+#description-dashboard{
+  font-size: 14px;
+}
 
+
+
+.card-title{
+  font-size: 18px;
+}
+.impact-list{
+  font-size: 14px;
+}
+.card-horizontal:hover{
+  box-shadow: 0 0 6px #DCE3FD;
+
+}
+card-body-chart{
+  flex: 0 0 auto;
+}
+.invested{
+    margin-top: 50px;
+    text-align: center;
+
+
+}
+.investment-date{
+  text-align: center;
+
+}

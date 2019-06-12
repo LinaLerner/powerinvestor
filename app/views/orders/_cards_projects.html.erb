@@ -8,13 +8,13 @@
                             <h4 class="card-title">
                             <%= order.project.title %>
                           </h4>
-                            <p>
-                                Société d’investissements solidaires de la fondation Abbé Pierre qui utilise l’épargne citoyenne comme une réponse concrète à la lutte contre le mal-logement.
+                            <p id="description-dashboard">
+                                <%= order.project.short_description%>
                             </p>
                         </div>
                         <div class="card-body border-right">
                             <h4 class="card-title">Impact</h4>
-                            <ul>
+                            <ul class = "impact-list">
                                 <% order.project.impact.split(",").each do |impact| %>
                                     <li class="card-text">
                                         <%= impact %>
@@ -31,7 +31,29 @@
                               <%= (order.project.amount_collected.to_f / order.project.amount_needed * 100).round %> %
                             </h6>
                             </div>
+                            <div>
+                              <h6 class = "invested">
+
+                                Investissement :
+                                <%=
+                                if order.payment == nil
+                                  "#{[300, 450, 600].sample}€"
+                                else
+                                "#{JSON.parse(order.payment)["amount"]/100}€"
+                              end
+
+                                %>
+                                <br>
+                                 Investis le  :
+                                <%=
+                                "#{order.created_at.to_datetime.strftime("%d/%m/%Y")}"
+                                %>
+                              </h6>
+                              <h6 class = "investment-date">
+                              </h6>
+                            </div>
                         </div>
+
 
                     </div>
                 </div>
