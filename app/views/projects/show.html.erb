@@ -1,15 +1,7 @@
-<!-- <div class="franceconnect-modal d-none">
-  <div class="modal-content">
-    <h2>Votre profil n'est pas complet !</h2>
-    <p>Nous avons besoin de certains documents pour pouvoir valider votre investissement. Compléter votre profil en un clic !</p>
-    <div>
-      <input type="button" class="franceconnect-button" value="Complétez le en un clic.">
-    </div>
-  </div>
-</div> -->
-
 <div class="container">
-
+  <div class="link mt-3">
+   <%=  link_to "< Retour à la liste des projets", projects_path%>
+  </div>
   <div class="d-flex flex-column">
 
     <div class="project-card-container d-flex mt-3 justify-content-around">
@@ -21,10 +13,9 @@
             <h1><%= @project.title.capitalize %></h1>
             <div class="underline"></div>
           </div>
-          <div class="rating-show"><%= @project.rating %>% de pertinence</div>
+          <div class="rating-show center"><div class="pourcentage"><%= @project.rating %>% </div><div  class="legend">de pertinence</div></div>
         </div>
-        <div class="legend">Projet proposé par la plateforme <%= @project.provider %>
-        </div>
+        <div class="legend">🇫🇷 <%= @project.city %>, France </div>
         <div class="d-flex justify-content-start">
           <% @project.categories.to_a.each do |category| %>
            <div class="tag-show mr-3">
@@ -70,15 +61,14 @@
         </div>
       </div>
 
-    <div class="project-financial-info-card d-flex flex-column p-2 w-40">
+    <div class="project-financial-info-card d-flex flex-column p-3 m-3 w-40">
 
       <div>
         <div class="d-flex flex-column">
-          <h4 id="chart-title">Progrès de la collecte</h4>
+          <h4 id="mt-5">La collecte</h4>
+          <div class="legend">Projet proposé par la plateforme <%= @project.provider %>
+          </div>
           <div class="underline"></div>
-        </div>
-        <div class="center">
-          <p><%= @project.amount_collected %>€ sur les <%= @project.amount_needed %>€ necéssaires</p>
         </div>
         <canvas class = "chart" data-progress = "<%= (@project.amount_collected.to_f / @project.amount_needed * 100).round %>"width="auto" height="auto"></canvas>
         <div class="donut-show">
@@ -87,14 +77,27 @@
       </div>
 
       <div>
+        <div class="d-flex justify-content-around mt-3">
+          <div class="center">
+            <h2>Montant collecté</h2>
+            <p><%=@project.amount_collected %>€</p>
+          </div>
+          <div class="center">
+            <h2>Objectif</h2>
+            <p><%=@project.amount_needed%>€</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
         <div class="d-flex mt-3">
           <div class="center">
-            <h2>Durée du remboursement</h2>
+            <h2><i class="fas fa-hand-holding-usd"></i> Durée du remboursement</h2>
             <p><%= @project.exit_timing %> mois</p>
           </div>
           <div class="center">
-            <h2>Fin du financement</h2>
-            <p><%= @project.end_date.strftime('%F')%></p>
+            <h2><i class="far fa-clock"></i> Fin du financement</h2>
+            <p>Dans <%= (Date.today - Date.parse(  @project.end_date.to_s)).to_i%>jours</p>
           </div>
         </div>
       </div>
@@ -109,7 +112,7 @@
           <div>
             <%= form_tag orders_path do %>
             <%= hidden_field_tag 'project_id', @project.id %>
-            <%= number_field_tag 'amount_cents', nil, class: 'invest-form-input'%>
+            <%= number_field_tag 'amount_cents', @project.minimum_investment, class: 'invest-form-input'%>
           </div>
           <div>
             <%= submit_tag 'Investir !', class: 'invest-btn' %>
@@ -120,9 +123,6 @@
     </div>
   </div>
 
-  <div class="link">
-   <%=  link_to "< Go back", projects_path%>
-  </div>
 </div>
 
 <div class="stripe-button">
