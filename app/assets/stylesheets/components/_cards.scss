@@ -78,6 +78,7 @@ width: 100%;
 }
 
 .cards {
+  position: relative;
   margin-top: 10px;
   width: 360px;
   height: 420px;
@@ -89,6 +90,45 @@ width: 100%;
   padding-top: 15px;
   padding-bottom: 15px;
   }
+.cards:hover .overlay {
+  display: block;
+  background: rgba(252, 230, 208, 0.43);
+
+}
+
+.cards:hover .cards-button {
+  opacity: 1;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 20%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.5s ease;
+  }
+
+.cards h2 {
+  font-size: 24px;
+  font-weight: regular;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 100%;
+  letter-spacing: normal;
+}
+
+.cards-button {
+  opacity: 0;
+  width: 170px;
+  height: 33px;
+  border-radius: 4px;
+  background-color: #202135;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+}
 
 .cards-top {
   display: flex;              /* Children use Flexbox */
@@ -135,7 +175,6 @@ width: 100%;
     padding-top: 5px;
     padding-right: 5px;
     padding-left: 5px;
-
 }
 
 .cards-picto-rate {
@@ -148,17 +187,6 @@ width: 100%;
    font-weight: 900;
 }
 
-.cards-button {
-  width: 170px;
-  height: 33px;
-  border-radius: 4px;
-  background-color: #202135;
-  align-items: center;
-  color: white;
-  font-size: 14px;
-  margin:25px;
-  text-decoration: none;
-}
 
 .buttontag {
   font-size: 16px;
@@ -215,7 +243,7 @@ width: 100%;
 
 .cards-header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 
@@ -231,14 +259,6 @@ width: 100%;
   align-items: center;
 }
 
-.cards h2 {
-  font-size: 24px;
-  font-weight: regular;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 100%;
-  letter-spacing: normal;
-}
 
 
 // Rendering cards
