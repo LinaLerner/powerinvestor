@@ -2,6 +2,13 @@
 
  <div class="container">
 
+  <%= simple_form_for :search, url: projects_path, method: :get do  %>
+  <div class="search-form-control form-group">
+    <%= text_field_tag :query, params[:query], :placeholder => 'Rechercher un projet  ', :class => "form-control string required" %>
+    <% submit_tag "Search This Site", name: nil, :class => "btn btn-flat" %>
+  </div>
+<% end %>
+
   <!-- [...] -->
 <%= form_tag projects_path, method: :get, remote: true do  %>
   <%#= text_field_tag :query,
@@ -9,10 +16,10 @@
     class: "form-control",
     placeholder: "Find a project"
   %>
-  <div class="categories"> <br><br>Category</div>
+  <div class="categories"></div>
   <% @categories.each do |category| %>
-    <input class = "project-category" type="checkbox" id="<%= category.title %>" name="category[]" value="<%= category.title %>">
-    <label for="<%= category.title %>"><%= category.title %></label>
+    <input class ="project-category" style="display: none;" type="checkbox" id="<%= category.title %>" name="category[]" value="<%= category.title %>">
+    <label class ="buttontag" for="<%= category.title %>"><%= category.title %></label>
   <% end %>
 
 
@@ -33,7 +40,7 @@
 
 
 
-  <div class="header"></h2>Plus de 3725 projets<h2>
+  <div class="header"></h2><h2>
   </div>
 
 <div class="container">
