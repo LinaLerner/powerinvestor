@@ -40,6 +40,13 @@ const initChart = () => {
         const radarChart = new Chart(radar, {
           type: 'radar',
           data: marksData
+          ,options: {
+    scale: {
+        ticks: {
+            display: false
+        }
+    }
+}
         });
       }
     }
