@@ -38,8 +38,8 @@ alimentation.save
 energie = Category.new(title: "énergie", image: "energie.png")
 energie.save
 
-pauvrete = Category.new(title: "pauvreté", image: "pauvrete.png")
-pauvrete.save
+# pauvrete = Category.new(title: "pauvreté", image: "pauvrete.png")
+# pauvrete.save
 
 sante = Category.new(title: "santé", image: "sante.png")
 sante.save
@@ -99,9 +99,9 @@ solifap = Project.create(
   start_date: "08/01/2019",
   end_date: "02/06/2019",
   project_url: "https://fr.lita.co/fr/projects/681-solifap",
-  rating: 87
+  rating: 24
   )
-ProjectCategory.create(project_id: solifap.id, category:pauvrete)
+ProjectCategory.create(project_id: solifap.id, category:alimentation)
 ProjectCategory.create(project_id: solifap.id, category:egalite)
 Order.create(project: solifap, user: merwane)
 bioburger = Project.create(
@@ -112,17 +112,17 @@ bioburger = Project.create(
   provider: "Lita",
   amount_needed: 350000,
   amount_collected: 80000,
-  minimum_investment: 258,
+  minimum_investment: 250,
   exit_timing: 2,
   company_type: start_up,
   location: europe,
   city: "Paris",
   project_manager_profile: "Camarades de classe, c’est sur les bancs de l’école que Louis Frack et Anthony Darré ont pour la première fois l’idée de créer Bioburger, l’offre de street food et particulièrement de burgers, une offre alors très limitée. À la fin de leurs études, la décision est prise : ils rénovent du sol au plafond un ancien restaurant asiatique et ouvrent en juillet 2011 leur premier point de vente. Ce sera passage de Choiseul en plein cœur de Paris. Ils sont sur tous les fronts et travaillent sans relâche sur les process en restaurant, la logistique, et la rentabilité de chaque restaurant afin de les rendre autonomes. Pari réussi ! Aujourd’hui, Louis Frack est en charge du développement de l’enseigne et des problématiques administratives, financières et juridiques. Anthony Darré, quant à lui, assure la supervision opérationnelle de l’entreprise, du développement produits et des achats.",
   financial_product: "actions ordinaires",
-  start_date: "08/08/2019",
-  end_date: "02/11/2019",
+  start_date: "08/06/2019",
+  end_date: "02/07/2019",
   project_url: "https://fr.lita.co/fr/projects/673-bioburger",
-  rating: 81
+  rating: 89
   )
 ProjectCategory.create(project_id: bioburger.id, category:alimentation)
 ProjectCategory.create(project_id: bioburger.id, category:agriculture)
@@ -146,7 +146,7 @@ ecomegot = Project.create(
   start_date: "08/02/2019",
   end_date: "02/09/2019",
   project_url: "https://fr.lita.co/fr/projects/668-ecomegot",
-  rating: 79
+  rating: 19
   )
 ProjectCategory.create(project_id: ecomegot.id, category:education)
 ProjectCategory.create(project_id: ecomegot.id, category:agriculture)
@@ -284,7 +284,7 @@ nuevaluz = Project.create(
   project_url: "https://www.babyloan.org/fr/projets_solidaires/jennifer-carole-t/la-boutique-de-jennifer-408874/42645",
   rating: 53
   )
-ProjectCategory.create(project_id: nuevaluz.id, category_id:pauvrete.id)
+ProjectCategory.create(project_id: nuevaluz.id, category_id:alimentation.id)
 ProjectCategory.create(project_id: nuevaluz.id, category_id:egalite.id)
 
 can = Project.create(
@@ -306,7 +306,7 @@ can = Project.create(
   project_url: "https://www.babyloan.org/fr/projets_solidaires/c259n-l/lelevage-bovin-de-can/43217",
   rating: 50
   )
-ProjectCategory.create(project_id: can.id, category_id:pauvrete.id)
+ProjectCategory.create(project_id: can.id, category_id:alimentation.id)
 ProjectCategory.create(project_id: can.id, category_id:agriculture.id)
 
 
@@ -329,6 +329,6 @@ chris = Project.create(
   project_url: "https://www.babyloan.org/fr/projets_solidaires/chris-d/le-reportage-de-chris-/43325",
   rating: 20
   )
-ProjectCategory.create(project_id: chris.id, category_id:pauvrete.id)
+ProjectCategory.create(project_id: chris.id, category_id:alimentation.id)
 ProjectCategory.create(project_id: chris.id, category_id:egalite.id)
 
