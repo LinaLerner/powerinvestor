@@ -53,6 +53,14 @@
   margin-bottom: 20px;
 }
 
+.underline-cards {
+  width:70px;
+  height: 5px;
+  background-image: linear-gradient(to right, $specific-background, $specific-background);
+  margin-bottom: 20px;
+}
+
+
 .title-recap {
   font-weight: bold;
   margin-bottom: 2px;
