@@ -13,11 +13,11 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-
+    <%= render "layouts/navbar" %>
     <div id="page-container">
      <div id="content-wrap">
     <% unless controller_name == "sessions" || controller_name == "registrations" || controller_name == "payments" %>
-      <%= render "layouts/navbar" %>
+
     <% end %>
       <%= yield %>
       <%= javascript_include_tag 'application' %>
