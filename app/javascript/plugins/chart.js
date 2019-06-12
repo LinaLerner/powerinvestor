@@ -1,5 +1,7 @@
 import Chart from 'chart.js';
 
+// DOUGNUT
+
 const initChart = () => {
     const myChart = document.getElementsByClassName('chart');
     if (myChart) {
@@ -23,7 +25,7 @@ const initChart = () => {
       });
 
 
-      // RADAR
+// RADAR
 
       const radar = document.getElementById('radar');
 
