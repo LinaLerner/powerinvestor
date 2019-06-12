@@ -1,12 +1,13 @@
   <div class="cards-grid">
     <% projects.each do |project| %>
       <div class="cards">
-            <div class="cards-header"><h2><%= project.title %></h2>
-            <div class="underline"></div>
+            <div class="cards-header"><h3><%= project.title %></h3> <div><p><%= project.rating %> % pertinences<p></div>
+
           </div>
+          <div class="underline"></div>
         <div class="cards-top">
           <% project.categories.to_a.each do |category| %>
-           <div class="cards-tag">
+           <div class="cards-tag-card">
              <%= category.title %>
            </div>
           <% end %>
@@ -15,7 +16,7 @@
 
           <div class="cards-middle"> <%= project.short_description %>
           </div>
- <div class="cards-matching"> <h2> <%= project.rating %> % pertinences</h2>  </div>
+ <div class="cards-matching">  </div>
 
          <div class="cards-info">
           <a href=<%= "/projects/#{project.id}"  %>>
