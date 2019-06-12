@@ -3,16 +3,17 @@
     <div class="row d-flex justify-content-around ">
       <div class="edit-form">
         <div class="progress w-100 mt-4 progress-form">
-          <div class="progress-bar progress-bar-form" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="75" aria-valuemax="100"></div>
+          <div class="progress-bar progress-bar-form three-quater-pg" id="progress-step-4" role="progressbar" aria-valuenow="75" aria-valuemin="75" aria-valuemax="100"></div>
         </div>
         <h5 class="my-4">Dites nous combien ?</h5>
+        <div class="underline"></div>
           <%= image_tag "step4.png" %>
           <%= simple_form_for([@user], :url => registration_path(@user), :method => :patch) do |f| %>
             <%= f.error_notification %>
             <div class="form-group check_boxes optional user_locations category-choices">
               <% ["- 200 €", "200 - 500 €", "500 - 1000 €", "+ 1000 €"].each do |range| %>
                 <div class="form-check category-chosen-step4">
-                <input class="form-check-input check_boxes optional d-none"  type="radio" value="<%= @user.maximum_investment %>" name="user[:maximum_investment][]" id="user_:maximum_investments_<%= @user.maximum_investment %>" />
+                <input class="form-check-input check_boxes optional d-none"  type="checkbox" value="<%= @user.maximum_investment %>" name="user[:maximum_investment][]" id="user_:maximum_investments_<%= @user.maximum_investment %>" />
                 <label class="collection_check_boxes" for="user_:maximum_investments_<%= @user.maximum_investment %>"><%= range %></label>
               </div>
                   <% end %>
@@ -20,19 +21,22 @@
             </div>
             <div class="form-actions">
               <%= f.button :submit, "Impressionnez moi!", class:"btn btn-form submit" %>
-              <div class="sk-circle d-none">
-                <div class="sk-circle1 sk-child"></div>
-                <div class="sk-circle2 sk-child"></div>
-                <div class="sk-circle3 sk-child"></div>
-                <div class="sk-circle4 sk-child"></div>
-                <div class="sk-circle5 sk-child"></div>
-                <div class="sk-circle6 sk-child"></div>
-                <div class="sk-circle7 sk-child"></div>
-                <div class="sk-circle8 sk-child"></div>
-                <div class="sk-circle9 sk-child"></div>
-                <div class="sk-circle10 sk-child"></div>
-                <div class="sk-circle11 sk-child"></div>
-                <div class="sk-circle12 sk-child"></div>
+              <div class="loader">
+                <div class="d-none sk-circle">
+                  <div class="sk-circle1 sk-child"></div>
+                  <div class="sk-circle2 sk-child"></div>
+                  <div class="sk-circle3 sk-child"></div>
+                  <div class="sk-circle4 sk-child"></div>
+                  <div class="sk-circle5 sk-child"></div>
+                  <div class="sk-circle6 sk-child"></div>
+                  <div class="sk-circle7 sk-child"></div>
+                  <div class="sk-circle8 sk-child"></div>
+                  <div class="sk-circle9 sk-child"></div>
+                  <div class="sk-circle10 sk-child"></div>
+                  <div class="sk-circle11 sk-child"></div>
+                  <div class="sk-circle12 sk-child"></div>
+                </div>
+                <div><h5 class="d-none loader-message">Chargez !</h5></div>
               </div>
             </div>
           <% end %>

@@ -1,9 +1,16 @@
 .progress-bar-form {
   background-color: #202135;
   border-radius: 10px;
+  &.full {
+    width: 100%;
+  }
 }
 
 .progress-form {
   border-radius: 10px;
   background-color: #DCE3FD;
+}
+
+.three-quater-pg {
+  width: 75%;
 }
