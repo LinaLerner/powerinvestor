@@ -341,16 +341,20 @@ margin-top: -41px;
   box-shadow: 0 0 6px #DCE3FD;
 
 }
-card-body-chart{
-  flex: 0 0 auto;
-}
 .invested{
     margin-top: 50px;
     text-align: center;
+    font-size: 14px;
 
 
 }
 .investment-date{
   text-align: center;
 
+}
+.card-chart{
+  height: 100%
+}
+.card{
+  border-radius: 4px;
 }

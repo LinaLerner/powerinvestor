@@ -12,14 +12,15 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-        <% unless controller_name == "sessions" || controller_name == "registrations" %>
-     <!-- <div id="content-wrap"> -->
-        <%= render "layouts/navbar" %>
-        <% end %>
-        <%= yield %>
-        <%= javascript_include_tag 'application' %>
-        <%= javascript_pack_tag 'application' %>
-     <%= render "layouts/footer" %>
+    <% unless controller_name == "sessions" || controller_name == "registrations" || controller_name == "payments" %>
+      <%= render "layouts/navbar" %>
+    <% end %>
+      <%= yield %>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
+    <% unless controller_name == "payments"%>
+      <%= render "layouts/footer" %>
+    <% end %>
   </body>
 
 <!--   DOUGHNUT -->

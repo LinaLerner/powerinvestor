@@ -22,7 +22,7 @@
                                     <% end %>
                             </ul>
                         </div>
-                        <div>
+                        <div class= "card-chart">
                             <h4 id="chart-title">Progress</h4>
                             <canvas class="chart" data-progress="<%= (order.project.amount_collected.to_f / order.project.amount_needed * 100).round %>" width="auto" height="auto">
                             </canvas>
@@ -32,7 +32,7 @@
                             </h6>
                             </div>
                             <div>
-                              <h6 class = "invested">
+                              <p class = "invested">
 
                                 Investissement :
                                 <%=
@@ -48,9 +48,7 @@
                                 <%=
                                 "#{order.created_at.to_datetime.strftime("%d/%m/%Y")}"
                                 %>
-                              </h6>
-                              <h6 class = "investment-date">
-                              </h6>
+                              </p>
                             </div>
                         </div>
 

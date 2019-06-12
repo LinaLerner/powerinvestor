@@ -11,7 +11,7 @@ const initChart = () => {
         data: {
           datasets: [{
             label: "Population (millions)",
-            backgroundColor: ["#202135", "#D9D8DA"],
+            backgroundColor: ["#202135", "#DCE3FD"],
             data: [parseInt(chart.dataset.progress, 10), 100 - parseInt(chart.dataset.progress, 10) ]
           }]
         },
@@ -20,7 +20,13 @@ const initChart = () => {
           responsive: false,
           title: {
             display: true
-          }
+          },
+          legend: {
+            display: false
+         },
+         tooltips: {
+            enabled: false
+         }
         }});
       });
 
@@ -47,7 +53,13 @@ const initChart = () => {
         ticks: {
             display: false
         }
-    }
+    },
+    legend: {
+            display: false
+         },
+         tooltips: {
+            enabled: false
+         }
 }
         });
       }
