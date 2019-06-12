@@ -32,9 +32,9 @@
 
             <div>
               <p class="title-recap ">Risque</p>
-              <p>20%</p>
+              <p>8%</p>
               <p class="title-recap"> Rentabilité</p>
-              <p>20%</p>
+              <p>12%</p>
               <p class="title-recap">  Impact prévu</p>
                 <ul>
                   <% @project.impact.split(",").each do |impact| %>
@@ -97,7 +97,7 @@
           </div>
           <div class="center">
             <h2><i class="far fa-clock"></i> Fin du financement</h2>
-            <p>Dans <%= (Date.today - Date.parse(  @project.end_date.to_s)).to_i%>jours</p>
+            <p>Dans <%= (Date.parse(@project.end_date.to_s) - Date.today).to_i%> jours</p>
           </div>
         </div>
       </div>
