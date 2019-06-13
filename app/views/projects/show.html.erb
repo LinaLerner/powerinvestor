@@ -37,13 +37,13 @@
               <p class="title-recap"> Rentabilité</p>
               <p>12%</p>
               <p class="title-recap">  Impact prévu</p>
-                <ul>
-                  <% @project.impact.split(",").each do |impact| %>
-                  <li class="card-text">
-                    <%= impact %>
-                  </li>
+                 <% @project.impact.split(",").each do |impact| %>
+                                <div style="display:flex;">
+                                  <div >
+                                    <i style="width: 30px" class="<%= impact.split(";")[0]%>"></i>
+                                  </div><%= impact.split(";")[1] %>
+                                </div>
                   <% end %>
-                </ul>
             </div>
 
         </div>
