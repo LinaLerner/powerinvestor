@@ -11,4 +11,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   accepts_nested_attributes_for :user_categories
   has_many :orders
+
+  def all_orders_amounts
+    user_amount = 0
+    orders.each do |order|
+      user_amount += order.clean_amount
+    end
+    return user_amount
+  end
 end

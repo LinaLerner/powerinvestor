@@ -35,16 +35,36 @@
                 </div>
             </div>
     </div>
-    <div class="profile">
-        <h4>Votre profil investisseur :</h4>
-        <h5>Super-Power-Energizer-Investor</h5>
-        <%= image_tag "superlenina.png" %>
-        <h5>Vous avez investi dans <%=  current_user.orders.count%> projets</h5>
-        <div>
-          <canvas id ="radar" class="radar-investor mb-4">
-          </canvas>
-          <%= link_to "Investir dans un nouveau projet", step1_path, class:"btn btn-form add-investment" %>
+
+    <div class="profile px-3">
+      <div class="badge-title d-flex">
+        <div class="titles">
+          <h5>Vous êtes :</h5>
+          <h7>Super-Power-Energizer-Investor</h7>
         </div>
+        <div class="badge">
+          <%= image_tag "superlenina.png", class:"avatar-large avatar-large-bordered" %>
+        </div>
+      </div>
+
+      <div class="investor-profile">
+        <!-- <div class="inner-profile-title">Votre profil investisseur :</div>
+        <div class="profile-statuses">
+          <div class="profile status">Vous avez investi dans <%#=  current_user.orders.count%> projets</div>
+          <div class="profile status">Votre montant investi : <%#= current_user.all_orders_amounts %>€</div>
+          <div class="profile status">Votre type d'investissement</div>
+        </div> -->
+        <div class="mt-4">
+          <h5>Votre profil investisseur</h5>
+          <canvas id ="radar" class="radar-investor">
+          </canvas>
+        </div>
+        <div class="profile-history">
+          <h9 class="profile-history-infos">Vous avez investi dans <strong><%=  current_user.orders.count%> projets</strong></h9>
+          <h9 class="profile-history-infos">Votre montant investi : <strong><%= current_user.all_orders_amounts %>€</strong></h9>
+        </div>
+      </div>
+      <%= link_to "Chercher un projet", step1_path, class:"btn btn-form add-investment" %>
     </div>
   </div>
     </section>

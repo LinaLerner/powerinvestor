@@ -49,21 +49,21 @@ const initChart = () => {
           type: 'radar',
           data: marksData
           ,options: {
-    scale: {
-      pointLabels : {
-        fontSize: 13,
-      },
-        ticks: {
-            display: false
-        }
-    },
-    legend: {
-            display: false
-         },
-         tooltips: {
-            enabled: false
-         }
-}
+            scale: { 
+                pointLabels : {
+                    fontSize: 13,
+            },
+                ticks: {
+                    display: false
+                }
+            },
+            legend: {
+                    display: false
+                 },
+                 tooltips: {
+                    enabled: false
+                 }
+          }
         });
       }
     }

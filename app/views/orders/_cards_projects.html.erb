@@ -25,7 +25,7 @@
                             </div>
                         </div>
                         <div class= "card-chart">
-                            <h4 id="chart-title">Progress</h4>
+                            <h4 id="chart-title" class="card-title">Progress</h4>
                             <canvas class="chart" data-progress="<%= (order.project.amount_collected.to_f / order.project.amount_needed * 100).round %>" width="auto" height="auto">
                             </canvas>
                             <div class="donut-inner">
@@ -35,16 +35,16 @@
                             </div>
                             <div>
                               <p class = "invested">
-
+                                
                                  <i style="width: 30px" class="fas fa-wallet"></i> :
-                                <%=
+                                <%= order.clean_amount
                                 if order.payment == nil
                                   "#{[300, 450, 600].sample}€"
                                 else
                                 "#{JSON.parse(order.payment)["amount"]/100}€"
                               end
 
-                                %>
+                                %>€
                                 <br>
                                  <i style="width: 30px" class="far fa-calendar-alt"></i>:
                                 <%=
