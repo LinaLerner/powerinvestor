@@ -33,7 +33,7 @@
 
             <div>
               <p class="title-recap ">Risque</p>
-              <p>8%</p>
+              <p>4%</p>
               <p class="title-recap"> Rentabilité</p>
               <p>8%</p>
               <p class="title-recap">  Impact prévu</p>
@@ -83,7 +83,7 @@
           </div>
 
           <div>
-            <div class="d-flex flex-column justify-content-around mt-3">
+            <div class="d-flex flex-column justify-content-around mt-5" style="margin-top: 2rem !important;">
               <div class="center">
                 <h2>Objectif</h2>
                 <p><%=@project.amount_needed%>€</p>
@@ -110,17 +110,12 @@
           </div>
         </div>
 
-        <div class="d-flex flex-column justify-content-center mt-5">
-            <div class="center">
-              <h2>Investissement minimum</h2>
-              <p><%= @project.minimum_investment %>€</p>
-            </div>
-
+        <div class="d-flex flex-column justify-content-center mt-5 mb-5">
             <div class="d-flex invest-form justify-content-center">
             <div>
               <%= form_tag orders_path do %>
               <%= hidden_field_tag 'project_id', @project.id %>
-              <%= number_field_tag 'amount_cents', @project.minimum_investment, class: 'invest-form-input'%>
+              <%= number_field_tag 'amount_cents', nil, class: 'invest-form-input', placeholder: "250€ minimum" %>
             </div>
           <div>
             <%= submit_tag 'Investir !', class: 'invest-btn' %>
