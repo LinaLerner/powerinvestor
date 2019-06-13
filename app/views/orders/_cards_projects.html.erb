@@ -36,7 +36,7 @@
                             <div>
                               <p class = "invested">
 
-                                Investissement :
+                                 <i style="width: 30px" class="fas fa-wallet"></i> :
                                 <%=
                                 if order.payment == nil
                                   "#{[300, 450, 600].sample}€"
@@ -46,16 +46,14 @@
 
                                 %>
                                 <br>
-                                 Investis le  :
+                                 <i style="width: 30px" class="far fa-calendar-alt"></i>:
                                 <%=
                                 "#{order.created_at.to_datetime.strftime("%d/%m/%Y")}"
                                 %>
                               </p>
                             </div>
                         </div>
-
-
-                    </div>
+                      </div>
                 </div>
                 <% end %>
         </div>
