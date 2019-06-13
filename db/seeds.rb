@@ -105,7 +105,7 @@ solifap = Project.create(
   )
 ProjectCategory.create(project_id: solifap.id, category:alimentation)
 ProjectCategory.create(project_id: solifap.id, category:egalite)
-Order.create(project: solifap, user: elina)
+Order.create(project: solifap, user: elina, amount_cents: 60000)
 bioburger = Project.create(
   title: "Bioburger",
   short_description: "Premier fast-food 100% bio qui change tous les codes de la restauration rapide. ",
@@ -152,7 +152,7 @@ ecomegot = Project.create(
 ProjectCategory.create(project_id: ecomegot.id, category:education)
 ProjectCategory.create(project_id: ecomegot.id, category:agriculture)
 ProjectCategory.create(project_id: ecomegot.id, category:sante)
-Order.create(project: ecomegot, user: elina)
+Order.create(project: ecomegot, user: elina, amount_cents: 40000)
 
 solarbrother = Project.create(
   title: "Solar Brother",

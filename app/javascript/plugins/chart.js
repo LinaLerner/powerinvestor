@@ -49,18 +49,18 @@ const initChart = () => {
           type: 'radar',
           data: marksData
           ,options: {
-    scale: {
-        ticks: {
-            display: false
-        }
-    },
-    legend: {
-            display: false
-         },
-         tooltips: {
-            enabled: false
-         }
-}
+            scale: {
+                ticks: {
+                    display: false
+                }
+            },
+            legend: {
+                    display: false
+                 },
+                 tooltips: {
+                    enabled: false
+                 }
+          }
         });
       }
     }
