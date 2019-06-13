@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="link mt-3">
    <%=  link_to "< Retour à la liste des projets", projects_path%>
@@ -34,15 +35,15 @@
               <p class="title-recap ">Risque</p>
               <p>4%</p>
               <p class="title-recap"> Rentabilité</p>
-              <p>9%</p>
+              <p>8%</p>
               <p class="title-recap">  Impact prévu</p>
-                <ul>
-                  <% @project.impact.split(",").each do |impact| %>
-                  <li class="card-text">
-                    <%= impact %>
-                  </li>
+                 <% @project.impact.split(",").each do |impact| %>
+                                <div style="display:flex;">
+                                  <div >
+                                    <i style="width: 30px" class="<%= impact.split(";")[0]%>"></i>
+                                  </div><%= impact.split(";")[1] %>
+                                </div>
                   <% end %>
-                </ul>
             </div>
 
         </div>
