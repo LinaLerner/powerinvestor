@@ -36,10 +36,10 @@ const initChart = () => {
       const radar = document.getElementById('radar');
 
       const marksData = {
-        labels: ["Agriculture", "Alimentation", "Energie", "Santé", "Envrionnemnt"],
+        labels: ["Agriculture", "Alimentation", "Energie", "Santé", "Environnement"],
         datasets: [{
           label: "Catégories d'impact",
-          backgroundColor: "#202135",
+          backgroundColor: "rgba(173, 191, 255, 0.75)",
           data: [80, 90, 25, 40, 65]
         }]
       };
@@ -50,6 +50,9 @@ const initChart = () => {
           data: marksData
           ,options: {
     scale: {
+      pointLabels : {
+        fontSize: 13,
+      },
         ticks: {
             display: false
         }

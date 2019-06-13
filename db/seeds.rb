@@ -128,7 +128,6 @@ bioburger = Project.create(
   )
 ProjectCategory.create(project_id: bioburger.id, category:alimentation)
 ProjectCategory.create(project_id: bioburger.id, category:agriculture)
-ProjectCategory.create(project_id: bioburger.id, category:sante)
 ecomegot = Project.create(
   title: "Ecomegot",
   impact: "7 millions de mégots collectés, 3650 citoyens sensibi événements de sensisibilisation,200 bornes solidaires installées",
