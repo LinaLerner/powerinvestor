@@ -35,15 +35,9 @@
                             </div>
                             <div>
                               <p class = "invested">
-                                
+
                                  <i style="width: 30px" class="fas fa-wallet"></i> :
                                 <%= order.clean_amount
-                                if order.payment == nil
-                                  "#{[300, 450, 600].sample}€"
-                                else
-                                "#{JSON.parse(order.payment)["amount"]/100}€"
-                              end
-
                                 %>€
                                 <br>
                                  <i style="width: 30px" class="far fa-calendar-alt"></i>:
