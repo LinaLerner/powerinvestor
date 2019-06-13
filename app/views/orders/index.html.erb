@@ -39,8 +39,8 @@
     <div class="profile px-3">
       <div class="badge-title d-flex">
         <div class="titles">
-          <h5>Vous êtes :</h5>
-          <h7>Super-Power-Energizer-Investor</h7>
+          <h5><%= @user.first_name %>, vous êtes une:</h5>
+          <h7>Power-Eco-Foodie-Investor</h7>
         </div>
         <div class="badge">
           <%= image_tag "superlenina.png", class:"avatar-large avatar-large-bordered" %>
@@ -60,8 +60,8 @@
           </canvas>
         </div>
         <div class="profile-history">
-          <h9 class="profile-history-infos">Vous avez investi dans <strong><%=  current_user.orders.count%> projets</strong></h9>
-          <h9 class="profile-history-infos">Votre montant investi : <strong><%= current_user.all_orders_amounts %>€</strong></h9>
+          <h9 class="profile-history-infos"><i class="fas fa-medal"></i> <strong><%=  current_user.orders.count%> projets investis</strong></h9>
+          <h9 class="profile-history-infos"><i class="fas fa-hand-holding-usd"></i> <strong><%= current_user.all_orders_amounts %></strong>€ investis</h9>
         </div>
       </div>
       <%= link_to "Chercher un projet", step1_path, class:"btn btn-form add-investment" %>

@@ -47,7 +47,10 @@
   font-size: 14px;
   margin-top: 0px;
   position: absolute;
-  bottom: 32%;
+  bottom: 24%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   }
 }
 
@@ -74,6 +77,11 @@
     transition: background-color 0.3s;
     color: #202135;
   }
+}
+
+.btn-home {
+  font-weight: bolder;
+  border-radius: 5px;
 }
 
 #myBtn {

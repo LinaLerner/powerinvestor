@@ -1,11 +1,11 @@
 .profile {
   display: flex;
   position: sticky;
+  background-color: antiquewhite;
   top: 5px;
   bottom: 5px;
   width: 30%;
-  height: 100vh;
-  background-color: antiquewhite;
+  height: calc(100vh - 90px);
   margin: 15px;
   padding: 35px;
   justify-content: space-around;
