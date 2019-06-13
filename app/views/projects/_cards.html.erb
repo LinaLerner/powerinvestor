@@ -1,40 +1,42 @@
   <div class="cards-grid">
     <% projects.each do |project| %>
-      <div class="cards"><div class="overlay"></div>
-            <div class="cards-header"><h2><%= project.title %> </h2><div></div>
-<div><%= project.rating %> % pertinences</div>
+      <div class="cards">
+          <div class="overlay"></div>
+
+            <div class="cards-header">
+              <h2><%= project.title %> </h2>
+                <div>
+                  <div class="cards-rating">
+                    <%= project.rating %>%
+                  </div>
+                <div style="font-weight: bold; font-size: 10px;">de pertinence
+                </div>
+              </div>
+            </div>
+            <div class="underline-cards"></div>
+            <div class="cards-top">
+              <% project.categories.to_a.each do |category| %>
+               <div class="cards-tag-card">
+                 <%= category.title %>
+               </div>
+              <% end %>
+            </div>
+            <div class="cards-middle"> <%= project.short_description %>
+            </div>
+   <!-- <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559665618/battery-low_hdtxf5.png" alt="progression" class="cards-picto-status"> -->
+
+
+              <!-- <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1560419434/lita-logo_auq0oa.jpg" alt="amount" class="blackandwhite"> -->
+          <div class="cards-info">
+           <!--  <a href=<%#= "/projects/#{project.id}"  %>>
+              <input type="button" class="cards-button" value="découvrir le projet">
+            </a> -->
+            <!-- <a class="cards-redirect" href=<#%= "/projects/#{project.id}"  %>></a> -->
           </div>
-          <div class="underline-cards"></div>
-          <div class="cards-top">
-          <% project.categories.to_a.each do |category| %>
-           <div class="cards-tag-card">
-             <%= category.title %>
-           </div>
-          <% end %>
-
-          </div>
+      <%= link_to project_path(project), class: "cards-redirect" do %>
+      <% end %>
 
 
-
-
-          <div class="cards-middle"> <%= project.short_description %>
-          </div>
- <div class="cards-matching">  </div>
-<div class="cards-footer">
-          <div class="cards-picto-box">
-            <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559665618/battery-low_hdtxf5.png" alt="progression" class="cards-picto-status"> <%= (project.amount_collected.to_f / project.amount_needed * 100 ).round %>%
-            <img src="https://res.cloudinary.com/dqwubjw5x/image/upload/v1559665618/euro_hd0zqv.png" alt="amount" class="cards-picto-amount"> <%= project.minimum_investment %>€/min.
-          </div>
-        </div>
-         <div class="cards-info">
-          <a href=<%= "/projects/#{project.id}"  %>>
-            <input type="button" class="cards-button" value="découvrir le projet">
-          </a>
-
-         </div>
-
-
-
-        </div>
-    <% end %>
     </div>
+  <% end %>
+</div>
