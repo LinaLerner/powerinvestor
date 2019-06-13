@@ -53,6 +53,9 @@ environnement.save
 education = Category.new(title: "éducation", image: "education.png")
 education.save
 
+logement = Category.new(title: "logement", image: "logement.png")
+logement.save
+
 
 # LOCATION
 
@@ -155,6 +158,7 @@ Order.create(project: ecomegot, user: elina, amount_cents: 40000)
 
 solarbrother = Project.create(
   title: "Solar Brother",
+  impact: "fas fa-briefcase;25 jobs créés",
   provider: "Lita",
   short_description: "Le spécialiste de la cuisson solaire et de l'allumage solaire démocratise l’expérience et l’utilisation de l’énergie solaire concentré en conjuguant innovation et transfert de connaissances. ",
   long_description: "Charlotte de Vilmorin est en fauteuil depuis toujours. En parallèle de sa carrière dans la publicité, elle crée le blog Wheelcome où elle raconte de façon humoristique ses aventures de jeune parisienne en fauteuil. Très vite le blog fédère une communauté importante dont beaucoup sont dans une situation semblable à celle de Charlotte. Concernée directement par les difficultés qu’elle rencontre lors de ses déplacements, elle décide alors de quitter son poste et de créer Wheeliz pour faciliter la mobilité des personnes en fauteuil. Wheeliz est le premier site collaboratif de location de voitures aménagées pour les personnes en fauteuil roulant. La plateforme comptabilise fin 2018, 8 000 utilisateurs et 870 véhicules aménagés inscrits et référencés.",
@@ -176,7 +180,8 @@ ProjectCategory.create(project_id: solarbrother.id, category_id:energie.id)
 ProjectCategory.create(project_id: solarbrother.id, category_id:environnement.id)
 
 wheeliz = Project.create(
-  title: "Paris",
+  title: "Wheeliz",
+  impact: "fas fa-briefcase;25 jobs créés",
   short_description: "Première plateforme de location solidaire, dédiée aux voitures aménagées pour les personnes en fauteuil roulant. ",
   long_description: "Charlotte de Vilmorin est en fauteuil depuis toujours. En parallèle de sa carrière dans la publicité, elle crée le blog Wheelcome où elle raconte de façon humoristique ses aventures de jeune parisienne en fauteuil. Très vite le blog fédère une communauté importante dont beaucoup sont dans une situation semblable à celle de Charlotte. Concernée directement par les difficultés qu’elle rencontre lors de ses déplacements, elle décide alors de quitter son poste et de créer Wheeliz pour faciliter la mobilité des personnes en fauteuil. Wheeliz est le premier site collaboratif de location de voitures aménagées pour les personnes en fauteuil roulant. La plateforme comptabilise fin 2018, 8 000 utilisateurs et 870 véhicules aménagés inscrits et référencés.",
   provider: "Lita",
@@ -200,6 +205,7 @@ ProjectCategory.create(project_id: wheeliz.id, category_id:egalite.id)
 
 terraliacorporate = Project.create(
   title: "Terralia Corporate",
+  impact: "fas fa-briefcase;25 jobs créés",
   short_description: "Première plateforme de location solidaire, dédiée aux voitures aménagées pour les personnes en fauteuil roulant. ",
   long_description: "L’équipe dirigeante nous présente, par cette opportunité de financement Corporate fléché, une vraie stratégie à moyen terme en intégrant des opérations de qualité, qui est clairement identifiée, et respectant une chronologie cohérente dans leur stratégie de développement. Il s'agit ici de financer une partie des fonds propres de 15 projets immobiliers (le Clos Saint-Vincent, Villa Tivoli, Veymerange, Montigny-les-Metz, Villiers-sur-Mer, les Jardins Saint-Sauveur, le Clos de la Côte Fleurie, les Jardins de Cattenom, les Jardins de Saint-Jacques, les Jardins de Bellevue 3, les Jardins de Berg, Flévy, les Jardins de Rosières 2, les Jardins de Chatel 2, les Jardins de Louvigny). Les projets en cours de montage ne seront pas présentés dans le document annexe. Cependant leurs plannings correspondent à la durée de l'emprunt.",
   provider: "Wiseed",
@@ -221,6 +227,7 @@ ProjectCategory.create(project_id: terraliacorporate.id, category_id:environneme
 
 agronutris = Project.create(
   title: "Agronustris",
+  impact: "fas fa-briefcase;25 jobs créés",
   short_description: "Située en Occitanie, près de Toulouse, Agronutris (émanation de Micronutris) est une société de Biotechnologie dédiée au développement de l’industrie de l’insecte comme réponse aux enjeux alimentaires de demain.",
   long_description: "Après une 1ère levée de fonds réussie de Micronutris auprès des WiSEEDers en 2015, le fondateur et l'équipe R&D s'associent à une équipe de dirigeants expérimentés pour créer une activité distincte, exclusivement consacrée au BtoB : Agronutris. Cette nouvelle équipe fait appel aux WiSEEDers afin d’accompagner ce développement prometteur.",
   provider: "Wiseed",
@@ -244,6 +251,7 @@ ProjectCategory.create(project_id: agronutris.id, category_id:agriculture.id)
 
 herami = Project.create(
   title: "Hera-mi",
+  impact: "fas fa-briefcase;25 jobs créés",
   short_description: "L'objectif d'Hera-MI est de mettre l'intelligence artificielle au service du diagnostic radiologique du cancer du sein.",
   long_description: "Face à ces problématiques, notre ambition est d’accélérer et de fiabiliser le diagnostic radiologique du cancer du sein grâce à l’intelligence artificielle. Hera-MI a donc développé la solution Breast-SlimView, une solution brevetée de lecture et d’aide à la décision en mammographie 2D et 3D. Breast-SlimView offre un support de lecture innovant et disruptif où seule l’information pertinente est affichée. Le radiologue pourra s’affranchir de l’information superflue. il pourra donc visualiser en un coup d’oeil les zones suspectes. Hera-MI aide les radiologues à se recentrer sur leur cœur de métier, là où se trouve leur valeur ajoutée: l’analyse des zones cliniquement suspectes.",
   provider: "Wiseed",
@@ -267,6 +275,7 @@ ProjectCategory.create(project_id: herami.id, category_id:sante.id)
 
 nuevaluz = Project.create(
   title: "Nueva Luz",
+  impact: "fas fa-briefcase;25 jobs créés",
   short_description: "Jennifer possède une petite boutique dans laquelle elle loue des décorations pour événements festifs et vend aussi des vêtements pour enfants.",
   long_description: " Jennifer possède une petite boutique dans laquelle elle loue des décorations pour événements festifs et vend aussi des vêtements pour enfants. Elle sollicite un mircrocrédit pour renouveler son stock de décorations et de vêtements afin de satisfaire sa clientèle. Elle remercie la communauté de Babyloan de l'aider à développer son activité.",
   provider: "Babyloan",
@@ -289,6 +298,7 @@ ProjectCategory.create(project_id: nuevaluz.id, category_id:egalite.id)
 
 can = Project.create(
   title: "Can",
+  impact: "fas fa-briefcase;25 jobs créés",
   short_description: "Can sollicite un prêt pour acheter du bétail ce qui lui permettra d'agrandir la taille de son troupeau et d'augmenter sa production. Can espère que grâce aux bénéfices de son activité, sa famille sera heureuse et se maintiendra en bonne santé.",
   long_description: "Elle est agricultrice et élève des porcs et du bétail depuis plus de 10 ans. Elle vient d'une famille aux faibles revenus et son travail est instable. Can est une personne appréciée de sa communauté. Elle a déjà bénéficié de 5 prêts qu'elle a remboursé avec succès. La principale difficulté à laquelle elle doit faire face est le manque de capital. Elle sollicite un prêt pour acheter du bétail ce qui lui permettra d'agrandir la taille de son troupeau et d'augmenter sa production. Can espère que grâce aux bénéfices de son activité, sa famille sera heureuse et se maintiendra en bonne santé.",
   provider: "Babyloan",
@@ -312,6 +322,7 @@ ProjectCategory.create(project_id: can.id, category_id:agriculture.id)
 
 chris = Project.create(
   title: "Chris",
+  impact: "fas fa-briefcase;25 jobs créés",
   short_description: "Son projet actuel est de réaliser des interviews de différentes personnalités de cette communauté et de proposer son reportage à des chaines de télévisions nigérianes. Il souhaite montrer aux Nigérians les différences et les similitudes entre la vie au Nigéria et la vie en Belgique. Il sollicite un microcrédit afin de louer l'équippement nécessaire à la réalisation de son reportage. ",
   long_description: "Son projet actuel est de réaliser des interviews de différentes personnalités de cette communauté et de proposer son reportage à des chaines de télévisions nigérianes. Il souhaite montrer aux Nigérians les différences et les similitudes entre la vie au Nigéria et la vie en Belgique. Il sollicite un microcrédit afin de louer l'équippement nécessaire à la réalisation de son reportage.",
   provider: "Babyloan",
