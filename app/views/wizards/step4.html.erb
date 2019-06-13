@@ -8,7 +8,7 @@
         <div class="img-form d-flex mt-4">
           <%= image_tag "step4.png" %>
         </div>
-        <h5 class="my-3">Dites nous combien ?</h5>
+        <h5 class="my-3">Pour finir, dites nous combien vous souhaitez investir</h5>
         <div class="underline"></div>
           <%= simple_form_for([@user], :url => registration_path(@user), :method => :patch) do |f| %>
             <%= f.error_notification %>
@@ -24,7 +24,7 @@
               <%= f.input :step, as: :hidden, :input_html => { :value => 'step4' } %>
             </div>
             <div class="form-actions">
-              <%= f.button :submit, "Impressionnez moi!", class:"btn btn-form submit" %>
+              <%= f.button :submit, "Impressionnez moi !", class:"btn btn-form submit" %>
               <div class="loader">
                 <div class="d-none sk-circle">
                   <div class="sk-circle1 sk-child"></div>
