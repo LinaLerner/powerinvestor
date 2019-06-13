@@ -33,17 +33,17 @@
 
             <div>
               <p class="title-recap ">Risque</p>
-              <p>8%</p>
+              <p>4%</p>
               <p class="title-recap"> Rentabilité</p>
-              <p>12%</p>
+              <p>8%</p>
               <p class="title-recap">  Impact prévu</p>
-                <ul>
-                  <% @project.impact.split(",").each do |impact| %>
-                  <li class="card-text">
-                    <%= impact %>
-                  </li>
+                 <% @project.impact.split(",").each do |impact| %>
+                                <div style="display:flex;">
+                                  <div >
+                                    <i style="width: 30px" class="<%= impact.split(";")[0]%>"></i>
+                                  </div><%= impact.split(";")[1] %>
+                                </div>
                   <% end %>
-                </ul>
             </div>
 
         </div>
@@ -64,57 +64,59 @@
 
     <div class="project-financial-info-card d-flex flex-column p-3 m-3 w-40">
 
-      <div>
-        <div class="d-flex flex-column">
-          <h4 id="mt-5">La collecte</h4>
-          <div class="legend">Projet proposé par la plateforme <%= @project.provider %>
-          </div>
-          <div class="underline"></div>
-        </div>
-        <canvas class = "chart" data-progress = "<%= (@project.amount_collected.to_f / @project.amount_needed * 100).round %>"width="auto" height="auto"></canvas>
-        <div class="donut-show">
-          <h5><%= (@project.amount_collected.to_f / @project.amount_needed * 100).round %> %</h5>
-        </div>
-      </div>
+      <div class="sticky">
 
-      <div>
-        <div class="d-flex justify-content-around mt-3">
-          <div class="center">
-            <h2>Montant collecté</h2>
-            <p><%=@project.amount_collected %>€</p>
-          </div>
-          <div class="center">
-            <h2>Objectif</h2>
-            <p><%=@project.amount_needed%>€</p>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="d-flex mt-3">
-          <div class="center">
-            <h2><i class="fas fa-hand-holding-usd"></i> Durée du remboursement</h2>
-            <p><%= @project.exit_timing %> mois</p>
-          </div>
-          <div class="center">
-            <h2><i class="far fa-clock"></i> Fin du financement</h2>
-            <p>Dans <%= (Date.parse(@project.end_date.to_s) - Date.today).to_i%> jours</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="d-flex flex-column justify-content-center mt-5">
-          <div class="center">
-            <h2>Investissement minimum</h2>
-            <p><%= @project.minimum_investment %>€</p>
+          <div class="d-flex flex-column">
+            <h4 id="mt-5">La collecte</h4>
+            <div class="legend">Projet proposé par la plateforme <%= @project.provider %>
+            </div>
+            <div class="underline"></div>
           </div>
 
-          <div class="d-flex invest-form justify-content-center">
+          <div class="d-flex justify-content-between">
+
+          <div class="position-relative" style="min-width: 148px;">
+            <canvas class = "chart donut-graph-show mt-0" data-progress = "<%= (@project.amount_collected.to_f / @project.amount_needed * 100).round %>"width="auto" height="auto"></canvas>
+            <div class="donut-show">
+              <h5><%= (@project.amount_collected.to_f / @project.amount_needed * 100).round %> %</h5>
+            </div>
+          </div>
+
           <div>
-            <%= form_tag orders_path do %>
-            <%= hidden_field_tag 'project_id', @project.id %>
-            <%= number_field_tag 'amount_cents', @project.minimum_investment, class: 'invest-form-input'%>
+            <div class="d-flex flex-column justify-content-around mt-5" style="margin-top: 2rem !important;">
+              <div class="center">
+                <h2>Objectif</h2>
+                <p><%=@project.amount_needed%>€</p>
+              </div>
+              <div class="center">
+                <h2>Collecté</h2>
+                <p><%=@project.amount_collected %>€</p>
+              </div>
+            </div>
           </div>
+
+        </div>
+
+        <div>
+          <div class="d-flex mt-5">
+            <div class="center">
+              <h2><i class="fas fa-hand-holding-usd"></i> Durée du remboursement</h2>
+              <p><%= @project.exit_timing %> mois</p>
+            </div>
+            <div class="center">
+              <h2><i class="far fa-clock"></i> Fin du financement</h2>
+              <p>Dans <%= (Date.parse(@project.end_date.to_s) - Date.today).to_i%> jours</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column justify-content-center mt-5 mb-5">
+            <div class="d-flex invest-form justify-content-center">
+            <div>
+              <%= form_tag orders_path do %>
+              <%= hidden_field_tag 'project_id', @project.id %>
+              <%= number_field_tag 'amount_cents', nil, class: 'invest-form-input', placeholder: "250€ minimum" %>
+            </div>
           <div>
             <%= submit_tag 'Investir !', class: 'invest-btn' %>
             <% end %>
@@ -123,7 +125,7 @@
       </div>
     </div>
   </div>
-
+  </div>
 </div>
 <% unless @order.nil? %>
 <div >
