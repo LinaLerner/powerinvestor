@@ -1,5 +1,5 @@
 meta_product_name: "Power Investor"
 meta_title: "PowerInvestor - Il y a forcement un projet pour vous."
 meta_description: "PowerInvestor vous guide dans vos investissements des milliers de projets"
-meta_image: "red-band-society.jpeg" # should exist in `app/assets/images/`
+meta_image: "red-band-society.jpg" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
