@@ -36,12 +36,14 @@ class ProjectsController < ApplicationController
 
 
   def show
+    if params["order_id"].present?
+      @order = Order.find_by_id(params["order_id"])
+    end
     @project = Project.find_by_id(params[:id])
     @marker = {
         lat: @project.latitude,
         lng: @project.longitude
        }
-       @order =Order.create
   end
 end
 
