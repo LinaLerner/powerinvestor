@@ -76,4 +76,10 @@
 
 #myBtn {
   width: 100%;
+  background-color: transparent;
+  border: transparent;
+  &:hover {
+    text: pointer;
+    color: #DCE3FD;
+  }
 }
