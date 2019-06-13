@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-    .body {
+
+  .body {
     background-color: antiquewhite;
     color: #202135;
   }
@@ -16,12 +17,10 @@
     text-align: center;
     margin: auto;
     justify-content: space-around;
-    align-items: center;
   }
 
-  .image-500 {
-    height: 450px;
-    width: 500px;
+  .image-404 {
+  height: 450px;
   }
 
   h1 {
@@ -82,13 +81,15 @@
 </head>
 
 <body class="body">
-  <!-- This file lives in public/500.html -->
+  <!-- This file lives in public/404.html -->
   <div class="container">
-    <div>
-      <h1>Woops, petit probleme... On est sur le coup</h1>
+    <div class="dialog">
+      <div>
+        <h1>La page que vous recherchez s'est faite enlever</h1>
+        <p>Tentez une autre URL</p>
+        <%= image_tag('taken.png'), class:"image-404"%>
+      </div>
     </div>
-    <img class="image-500" src="work.png" alt="404">
-
   </div>
 </body>
 </html>
