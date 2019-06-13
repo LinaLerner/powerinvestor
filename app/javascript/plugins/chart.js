@@ -49,7 +49,7 @@ const initChart = () => {
           type: 'radar',
           data: marksData
           ,options: {
-            scale: { 
+            scale: {
                 pointLabels : {
                     fontSize: 13,
             },
