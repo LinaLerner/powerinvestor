@@ -16,18 +16,18 @@
 
                         <div class="tab-pane fade show active" id="pop1" role="tabpanel" aria-labelledby="pop1-tab">
                             <div class="pt-3">
-                              <%= render partial: "cards_projects", locals: {orders: @orders} %>
+                              <%= render partial: "cards_projects", locals: {orders: @orders, animation: true} %>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pop2" role="tabpanel" aria-labelledby="pop2-tab">
                             <div class="pt-3">
-                              <%= render partial: "cards_projects", locals: {orders: @orders_in_progress} %>
+                              <%= render partial: "cards_projects", locals: {orders: @orders_in_progress, animation: false} %>
                             </div>
 
                         </div>
                         <div class="tab-pane fade" id="pop3" role="tabpanel" aria-labelledby="pop3-tab">
                             <div class="pt-3">
-                              <%= render partial: "cards_projects", locals: {orders: @orders_finished} %>
+                              <%= render partial: "cards_projects", locals: {orders: @orders_finished, animation: false} %>
                             </div>
 
                         </div>

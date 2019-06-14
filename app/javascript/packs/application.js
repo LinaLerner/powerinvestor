@@ -9,7 +9,6 @@ import { initChart } from "../plugins/chart";
 import { manageRadio } from "../plugins/radio";
 import { initFilter } from "../plugins/init_filter";
 
-
 initMapbox();
 manageCheckbox();
 manageRadio();
@@ -18,4 +17,3 @@ manageSpinner();
 seeMore();
 initChart();
 initFilter();
-

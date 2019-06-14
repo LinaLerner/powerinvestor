@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 mt-3">
             <%= link_to project_path(order.project), {id:"card-project-link"} do %>
-                <div class="card <%=  "#{"animated bounceInDown" if params[:order_id].to_i == order.id}" %>">
+                <div class="card <%=  "#{"animated bounceInDown" if params[:order_id].to_i == order.id && animation}" %>">
                     <div class="card-horizontal">
                         <div class="card-body rounded border-right card-project">
                             <h4 class="card-title">
