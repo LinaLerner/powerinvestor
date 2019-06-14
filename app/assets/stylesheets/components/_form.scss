@@ -158,11 +158,13 @@
   opacity: 1;
   z-index: 1;
   font-size: 20px;
+  text-align: center;
   text-transform: capitalize;
   position: relative;
 }
 
-.collection_check_boxes:before {
+.step2 .collection_check_boxes:before,
+.step4 .collection_check_boxes:before {
     content: "";
     width: 100%;
     height: 19px;
@@ -170,6 +172,8 @@
     z-index: -1;
     position: absolute;
     bottom: -2px;
+    right: 0;
+    left: 0;
 }
 
 .category-chosen:hover .collection_check_boxes:before {

@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
 # CLEAN ERRRRYTHING
@@ -62,7 +62,7 @@ logement.save
 europe = Location.new(title: "Europe")
 europe.save
 
-amlat = Location.new(title: "Amérique Latine")
+amlat = Location.new(title: "Amériques")
 amlat.save
 
 mo = Location.new(title: "Moyen Orient")

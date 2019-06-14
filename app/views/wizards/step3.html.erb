@@ -16,8 +16,9 @@
           <div class="form-group check_boxes optional user_company_types category-choices grid-2">
             <input type="hidden" name="user[company_type_ids][]" value="" />
             <% @company_types.each do |company_type| %>
-              <div class="category-chosen-wrapper">
-                <div class="form-check category-chosen" style="background-image: url(<%= image_path company_type.image %>)">
+              <div class="category-chosen-wrapper step3">
+                <div class="form-check category-chosen" style="background-image: url()">
+                  <%= image_tag company_type.image, class: "category-chosen-image" %>
                   <input class="form-check-input check_boxes optional d-none"  type="checkbox" value="<%= company_type.id %>" name="user[company_type_ids][]" id="user_company_type_ids_<%= company_type.id %>" />
                   <label class="collection_check_boxes" for="user_company_type_ids_<%= company_type.id %>"><%= company_type.title %></label>
                 </div>
