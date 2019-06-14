@@ -20,7 +20,8 @@
             <input type="hidden" name="user[category_ids][]" value="" />
             <% @categories.each do |category| %>
               <div class="category-chosen-wrapper">
-                <div class="form-check category-chosen" style="background-image: url(<%= image_path category.image %>)">
+                <div class="form-check category-chosen" style="background-image: url()">
+                  <%= image_tag category.image, class: "category-chosen-image" %>
                   <input class="form-check-input check_boxes optional d-none"  type="checkbox" value="<%= category.id %>" name="user[category_ids][]" id="user_category_ids_<%= category.id %>" />
                   <label class="collection_check_boxes" for="user_category_ids_<%= category.id %>"><%= category.title %></label>
                 </div>
