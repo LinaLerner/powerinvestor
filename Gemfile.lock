@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/glyph-fr/redactor-rails.git
+  remote: https://github.com/glyph-fr/redactor-rails.git
   revision: 6f6655fd71199700f2e5d7bc1f7f3c19f37dde50
   specs:
     redactor-rails (0.6.0)
@@ -209,7 +209,7 @@ GEM
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
-    tzinfo (1.2.5)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
